@@ -18,7 +18,3 @@ npm ci
 npm install
 ```
 실행시 package.json 모듈 업데이트 및 다운로드 설치
-
-
-test
-
