@@ -22,9 +22,9 @@
     <div class="section">
       <div class="section-content">
         <div class="flex-container">
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1002.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1002.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1003.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('image/03_s1002.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1002.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1003.png') no-repeat;"></div>
         </div>
         <div class="flex-container-caption">
           <div class="name">민머리</div>
@@ -32,9 +32,9 @@
           <div class="name">숏컷</div>
         </div>
         <div class="flex-container">
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1004.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1005.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1006.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('image/03_s1004.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1005.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1006.png') no-repeat;"></div>
         </div>
         <div class="flex-container-caption">
           <div class="name">단발</div>
@@ -42,9 +42,9 @@
           <div class="name">장발 웨이브</div>
         </div>
         <div class="flex-container">
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1007.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1008.png')  no-repeat center bottom/100% 100%;"></div>
-          <div class="circle-img" style="background: url('/src/youngman/image/03_s1009.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('image/03_s1007.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1008.png') no-repeat;"></div>
+          <div class="circle-img" style="background: url('image/03_s1009.png') no-repeat;"></div>
         </div>
         <div class="flex-container-caption">
           <div class="name">똥머리</div>
@@ -61,6 +61,9 @@
   </div>
 </div>
 </body>
+<script>
+  document.getElementsByClassName('circle-img')
+</script>
 <style>
     body{
         background-color: #45a5e8;
@@ -82,14 +85,15 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 60%;
+        width: 80%;
         height: 70%;
         transform: translate(-50%, -50%);
     }
     .top-sbj-sb {
         width: 100%;
         height: 19%;
-        margin: 2.5%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
     }
     .top-sbj-sb div {
         display: inline-block;
@@ -122,7 +126,7 @@
     }
     .circle-img {
         float: left;
-        width:28%;
+        width:29%;
         height:100%;
     }
     .flex-container-caption {
