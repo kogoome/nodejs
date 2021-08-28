@@ -1,6 +1,5 @@
-<!-- 브랜치 사용 수정 1ad -->
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>청년이 청년하다</title>
@@ -12,21 +11,22 @@
         <div class="overlay">
             <div class="top">
                 <div class="top-sbj">
-                    <img src="/image/01_main_title.png" class="mt" alt="main-title">
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb2"><img src="image/04_c1000_toptxt1.gif" alt=""></div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
                 </div>
             </div>
             <div class="section">
                 <div class="section-content">
-                    <form action="">
-                        <input class="inputBox" type="text" name="name" placeholder="이름 또는 닉네임을 알려주세요"><br><br>
-                        <p>입력후 아래 버튼을 클릭하면 이후 입력 내용을 변경할 수 없습니다.</p>
-                    </form><br><br>
+
                 </div>
             </div>
 
             <div class="footer">
                 <div class="footer_content">
-                    <a href=""><img src="image/02_name_button.png" class="mb" alt="main-btn"></a>
+                    <a href=""><img src="image/pre.png" alt="" class="pre"></a>
+                    <img src="image/s1000~5000_button.png" class="mb" alt="main-btn">
+                    <img src="image/next.png" alt="" class="next">
                 </div>
             </div>
         </div>
@@ -42,41 +42,58 @@
     .top {
         height: 25.67%;
         background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
-    }
-
-    .section {
+        text-align: center;
         position: relative;
-        height: 60.82%;
-    }
-    .overlay {
-        width: inherit;
-        height: inherit;
     }
 
-    .section-content {
-        width: 70%;
+    .top-sbj {
         position: absolute;
-        left: 50%;
         top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 70%;
         transform: translate(-50%, -50%);
     }
 
-    .inputBox {
+    .top-sbj-sb {
         width: 100%;
-        background-color: transparent;
-        border: none;
-        border-bottom: 8px solid #1a306d;
-        font-size: 2.5em;
+        height: 19%;
+        margin: 2.5%;
+    }
+
+    .top-sbj-sb2 {
+        width: 100%;
+        height: 38%;
+        margin: 2.5%;
+    }
+
+    .top img {
+        height: 100%;
+    }
+
+    .mt {
+        width: 85%;
+    }
+
+    .section {
+        height: 60.81%;
         text-align: center;
-        line-height: 2em;
     }
-    p{
-        font-size: 1.3em;
-        color: #696969;
+
+    .section-content {
+        position: relative;
+        top: 82%;
+        left: 23.5%;
+        width: 53%;
+        height: 10%;
+        border-radius: 6px;
+        overflow: hidden;
     }
+
     .footer {
         height: 13.52%;
     }
+
     .footer_content {
         position: relative;
         top: 30%;
@@ -86,20 +103,13 @@
         border-radius: 6px;
         overflow: hidden;
         transform: translate(-50%, -50%);
+        display: flex;
     }
-    .mb {
-        position: absolute;
-        width: 100%;
-        left: 0;        
-    }
-    .mb:hover {
-        top:-24.1vw;
-    }
-    .top-sbj {
-        padding-top: 18%;
-    }
+    
 
-    .mt {
-        width: 85%;
+    .overlay {
+        width: inherit;
+        height: inherit;
     }
+    
 </style></html>
