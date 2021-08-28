@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>청년이 청년하다</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+</head>
+
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top">
+      <div class="top-sbj">
+        <img src="image/01_main_title.png" class="mt" alt="main-title">
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-content">
+        <img src="image/01_main_button.png" class="mb" alt="main-btn">
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-logo">
+        <img src="image/01_main_logo.png" class="ml" alt="main-logo">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+    body{
+        background-color: #45a5e8;
+    }
+    .layout {
+        width: 100vw;
+        height: 205.5vw;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .top {
+        height: 25.67%;
+        background: url('/src/youngman/image/topbg_1.png') no-repeat center bottom/100% 100%;
+    }
+    .top-sbj {
+        padding-top: 18%;
+    }
+    .mt {
+        width: 85%;
+    }
+    .section {
+        height: 60.81%;
+        background: url('/src/youngman/image/01_main_image.jpg')  no-repeat center bottom/100% 100%;
+        text-align: center;
+    }
+    .section-content {
+        position: relative;
+        top: 87%;
+        left: 50%;
+        width: 52.95%;
+        height: 10%;
+        border-radius: 6px;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+    }
+    .mb {
+        position: absolute;
+        height: 100%;
+        left:0;
+    }
+    .mb:hover {
+        left:-105.85vw;
+    } /*238기준*/
+    .footer {
+        height: 13.52%;
+        background-color: #aaaaaa;
+        color: #626262;
+    }
+    .footer-logo {
+        padding-top: 9%;
+    }
+    .ml {
+        width: 65%
+    }
+    .overlay {
+        width: inherit;
+        height: inherit;
+    }
+</style></html>

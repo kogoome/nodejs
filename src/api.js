@@ -40,7 +40,7 @@ const posts = [
  * @typedef Route
  * @property {RegExp} url
  * @property {'GET'|'POST'} method
- * @property {(matches: string[]) => Promise<APIResponse>} callback
+ * @property {(matches: string[], body: Object.<string,*> | undefined) => Promise<APIResponse>} callback
  */
 
 /** @type {Route[]} */
@@ -59,24 +59,24 @@ const routes = [
     url: /^\/posts\/([a-zA-Z0-9-_]+)$/,
     method: 'GET',
     callback: async (matches) => {
-      const postId = matches[1]
-      if(!postId) {
+      const postId = matches[1] // 첫번째 regexResult는 아이디값
+      if(!postId) { // 아이디가 없다면
         return {
           statusCode: 200,
           body: 'Not found.',
         }
       }
-
+      
+      // 아이디가 일치하는 포스트 검색
       const post = posts.find(_post => _post.id === postId)
-
-      if (!post) {
+      if (!post) {// 포스트가 없다면
         return {
           statusCode: 200,
           body: 'Not found.',
         }
       }
 
-      return {
+      return {// 상태 번호와 해당아이디 포스트 반환
         statusCode:200,
         body:post,
       }
@@ -86,11 +86,30 @@ const routes = [
   {
     url: /^\/posts$/,
     method: 'POST',
-    callback: async () => ({
+    callback: async (_,body) => {
+      if (!body) {
+        return {
+          statusCode:400,
+          body: 'Ill-formed request.'
+        }
+      }
+
+      /** @type {string} */
+      /* eslint-disable-next-line prefer-destructuring */
+      const title = body.title
+      const newPost = {
+        id:body.id,
+        title:body.title,
+        content:body.content,
+      }
+
+      posts.push(newPost)
       // TODO: implement
-      statusCode: 200,
-      body: {},
-    }),
+      return {
+        statusCode: 200,
+        body: newPost,
+      }
+    },
   },
 ]
 

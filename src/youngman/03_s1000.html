@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>청년이 청년하다</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+</head>
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top">
+      <div class="top-sbj">
+        <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
+        <div class="top-sbj-sb"><span></span><img src="image/03_s1000_toptxt1.gif" alt=""></div>
+        <div class="top-sbj-sb"><img src="image/03_s1000_toptxt2.gif" alt=""></div>
+        <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-content">
+
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-btn">
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+    body{
+        background-color: #45a5e8;
+    }
+    .layout {
+        width: 100vw;
+        height: 205.5vw;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .top {
+        height: 25.67%;
+        background: url('/src/youngman/image/topbg_1.png') no-repeat center bottom/100% 100%;
+        text-align: center;
+        position: relative;
+    }
+    .top-sbj {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 70%;
+        transform: translate(-50%, -50%);
+    }
+    .top-sbj-sb {
+        width: 100%;
+        height: 19%;
+        margin: 2.5%;
+    }
+    .top-sbj-sb span {
+        height: 100%;
+        width: 10%;
+        background-color: red;
+    }
+    .top-sbj-sb img {
+        height: 100%;
+    }
+    .mt {
+        width: 85%;
+    }
+    .section {
+        height: 60.81%;
+        background-color: white;
+        text-align: center;
+    }
+    .section-content {
+        position: relative;
+        top: 82%;
+        left: 23.5%;
+        width: 53%;
+        height: 10%;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .mb {
+        position: absolute;
+        height: 100%;
+        left: 0;
+    }
+    .mb:hover {
+        left: -476px;
+    } /*238기준*/
+    .footer {
+        height: 13.52%;
+        background-color: red;
+        color: #626262;
+    }
+    .footer-btn {
+        padding-top: 0;
+    }
+    .ml {
+        width: 65%
+    }
+    .overlay {
+        width: inherit;
+        height: inherit;
+    }
+</style></html>

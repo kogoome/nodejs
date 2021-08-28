@@ -34,15 +34,30 @@ const server = http.createServer((req, res) => {
       res.end('Not found.')
       return
     }
+    
+    /** @type {Object.<string,*> | undefined} */
+    const reqBody = (req.headers['content-type'] === 'application/json' &&
+    (await new Promise((resolve, reject) => {
+      req.setEncoding('utf-8')
+      req.on('data', data => {
+        try {
+          resolve(JSON.parse(data))
+        } catch {
+          reject(new Error('Ill-formed json'))
+        }
+      })
+    }))) || undefined
+    
+    // regexResult를 보내서 아이디가 일치하는 포스트 검색후 반환
+    const result = await route.callback(regexResult, reqBody)
+    res.statusCode = result.statusCode // 반환받은 상태번호 출력
 
-    const result = await route.callback(regexResult)
-    res.statusCode = result.statusCode
-
+    // 결과값 바디가 문자타입으로 존재하면
     if (typeof result.body === 'string') {
-      res.end(result.body)
-    } else {
+      res.end(result.body)// 바디값을 출력하며 응답종료
+    } else {// 옵젝타입이면
       res.setHeader('Content-Type', 'application/json; charset=utf-8')
-      res.end(JSON.stringify(result.body))
+      res.end(JSON.stringify(result.body))// 파싱해서 출력
     }
   }
 

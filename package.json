@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"helllo world",
     "server": "nodemon src/main.js"
-
+  },
+  "engines": {
+    "node": "14.17.2"
   },
   "keywords": [],
   "author": "",
