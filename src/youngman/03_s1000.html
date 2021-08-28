@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>청년이 청년하다</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="layout">
@@ -11,14 +14,43 @@
     <div class="top">
       <div class="top-sbj">
         <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
-        <div class="top-sbj-sb"><span></span><img src="image/03_s1000_toptxt1.gif" alt=""></div>
+        <div class="top-sbj-sb"><div>물꼬기</div><img src="image/03_s1000_toptxt1.gif" alt=""></div>
         <div class="top-sbj-sb"><img src="image/03_s1000_toptxt2.gif" alt=""></div>
         <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
       </div>
     </div>
     <div class="section">
       <div class="section-content">
-
+        <div class="flex-container">
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1002.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1002.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1003.png')  no-repeat center bottom/100% 100%;"></div>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">민머리</div>
+          <div class="name">스포츠머리</div>
+          <div class="name">숏컷</div>
+        </div>
+        <div class="flex-container">
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1004.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1005.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1006.png')  no-repeat center bottom/100% 100%;"></div>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">단발</div>
+          <div class="name">장발 생머리</div>
+          <div class="name">장발 웨이브</div>
+        </div>
+        <div class="flex-container">
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1007.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1008.png')  no-repeat center bottom/100% 100%;"></div>
+          <div class="circle-img" style="background: url('/src/youngman/image/03_s1009.png')  no-repeat center bottom/100% 100%;"></div>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">똥머리</div>
+          <div class="name">최준머리</div>
+          <div class="name">불꽃머리</div>
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -32,11 +64,11 @@
 <style>
     body{
         background-color: #45a5e8;
+        font-family: 'Nanum Gothic', sans-serif;
     }
     .layout {
         width: 100vw;
         height: 205.5vw;
-        margin: 30px auto;
         text-align: center;
     }
 
@@ -59,16 +91,15 @@
         height: 19%;
         margin: 2.5%;
     }
-    .top-sbj-sb span {
-        height: 100%;
-        width: 10%;
-        background-color: red;
+    .top-sbj-sb div {
+        display: inline-block;
+        line-height: 80%;
+        color: white;
+        font-weight: bolder;
+        font-size: 2.9em;
     }
     .top-sbj-sb img {
         height: 100%;
-    }
-    .mt {
-        width: 85%;
     }
     .section {
         height: 60.81%;
@@ -77,21 +108,38 @@
     }
     .section-content {
         position: relative;
-        top: 82%;
-        left: 23.5%;
-        width: 53%;
-        height: 10%;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 77%;
         border-radius: 6px;
-        overflow: hidden;
+        transform: translate(-50%, -50%);
     }
-    .mb {
-        position: absolute;
-        height: 100%;
-        left: 0;
+    .flex-container {
+        display: flex;
+        height:23.33%;
+        justify-content: space-between;
     }
-    .mb:hover {
-        left: -476px;
-    } /*238기준*/
+    .circle-img {
+        float: left;
+        width:28%;
+        height:100%;
+    }
+    .flex-container-caption {
+        display: flex;
+        text-align: center;
+        font-size: 1.5em;
+        height:10%;
+        justify-content: space-between;
+    }
+    .name {
+        display: inline-block;
+        float: left;
+        padding-top: 3%;
+        width:28%;
+        height:100%;
+    }
+
     .footer {
         height: 13.52%;
         background-color: red;
@@ -99,9 +147,6 @@
     }
     .footer-btn {
         padding-top: 0;
-    }
-    .ml {
-        width: 65%
     }
     .overlay {
         width: inherit;

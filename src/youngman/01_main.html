@@ -11,17 +11,17 @@
   <div class="overlay">
     <div class="top">
       <div class="top-sbj">
-        <img src="image/01_main_title.png" class="mt" alt="main-title">
+        <img src="image/01_main_title.png" class="main-title" alt="main-title">
       </div>
     </div>
     <div class="section">
       <div class="section-content">
-        <img src="image/01_main_button.png" class="mb" alt="main-btn">
+        <img src="image/01_main_button.png" class="main-btn" alt="main-btn" onclick="changeimg(this)">
       </div>
     </div>
     <div class="footer">
       <div class="footer-logo">
-        <img src="image/01_main_logo.png" class="ml" alt="main-logo">
+        <img src="image/01_main_logo.png" class="main-logo" alt="main-logo">
       </div>
     </div>
   </div>
@@ -34,7 +34,6 @@
     .layout {
         width: 100vw;
         height: 205.5vw;
-        margin: 30px auto;
         text-align: center;
     }
 
@@ -45,7 +44,7 @@
     .top-sbj {
         padding-top: 18%;
     }
-    .mt {
+    .main-title {
         width: 85%;
     }
     .section {
@@ -63,13 +62,13 @@
         overflow: hidden;
         transform: translate(-50%, -50%);
     }
-    .mb {
+    .main-btn {
         position: absolute;
         height: 100%;
         left:0;
     }
-    .mb:hover {
-        left:-105.85vw;
+    .main-btn:hover {
+        left:-52.925vw;
     } /*238기준*/
     .footer {
         height: 13.52%;
@@ -79,11 +78,18 @@
     .footer-logo {
         padding-top: 9%;
     }
-    .ml {
+    .main-logo {
         width: 65%
     }
     .overlay {
         width: inherit;
         height: inherit;
     }
-</style></html>
+</style>
+<script>
+  function changeimg(img) {
+    img.style="left:-105.85vw;"
+    // click adtion
+  }
+</script>
+</html>
