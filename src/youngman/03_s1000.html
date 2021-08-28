@@ -22,9 +22,9 @@
     <div class="section">
       <div class="section-content">
         <div class="flex-container">
-          <div class="circle-img" style="background: url('image/03_s1002.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1002.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1003.png') no-repeat;"></div>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1002.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1002.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1003.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
         </div>
         <div class="flex-container-caption">
           <div class="name">민머리</div>
@@ -32,9 +32,9 @@
           <div class="name">숏컷</div>
         </div>
         <div class="flex-container">
-          <div class="circle-img" style="background: url('image/03_s1004.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1005.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1006.png') no-repeat;"></div>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1004.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1005.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1006.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
         </div>
         <div class="flex-container-caption">
           <div class="name">단발</div>
@@ -42,9 +42,9 @@
           <div class="name">장발 웨이브</div>
         </div>
         <div class="flex-container">
-          <div class="circle-img" style="background: url('image/03_s1007.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1008.png') no-repeat;"></div>
-          <div class="circle-img" style="background: url('image/03_s1009.png') no-repeat;"></div>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1007.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1008.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="1" type="radio"><div style="background:url('image/03_s1009.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
         </div>
         <div class="flex-container-caption">
           <div class="name">똥머리</div>
@@ -124,11 +124,26 @@
         height:23.33%;
         justify-content: space-between;
     }
-    .circle-img {
-        float: left;
+    .flex-container > label {
         width:29%;
         height:100%;
     }
+    label div {
+        width: 100%;
+        height: 100%;
+    }
+    label > div > img {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    [type=radio] {
+        display: none;
+    }
+    [type=radio]:checked + div > img{
+        opacity: 1;
+    }
+
     .flex-container-caption {
         display: flex;
         text-align: center;
