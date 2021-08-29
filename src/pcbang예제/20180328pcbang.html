@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<title>PC방 포인트 모으고 아이템으로 교환!</title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="control.js"></script>
+	<link rel="stylesheet" type="text/css" href="pcbang.css">
+</head>
+<body class="pcbang">
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- navi -->
+		<div id="navi" style="position: absolute;">
+			<div class="centerBox" style="height: 130px;">
+				<h1 id="logo"><a href="http://www.lostsaga.com" class="logo" title="홈페이지 바로가기">LOSTSAGA</a></h1>
+				<ul id="menu">
+					<li class="menu01 on"><a href="#event01">이벤트 1. 포인트 교환소</a></li>
+					<li class="menu02"><a href="#event02">이벤트 2. PC방 출석부</a></li>
+				</ul>
+				<div class="sns">
+					<button type="button" class="btnFacebook" title="페이스북으로 공유하기">페이스북</button>
+					<button type="button" class="btnTwitter" title="트위터으로 공유하기">트위터</button>
+					<a href="http://www.lostsaga.com/main/main.asp" class="btnGoHome" title="홈페이지 바로가기" target="_blank">홈페이지 바로가기</a>
+				</div>
+			</div>
+		</div>
+		<!-- //navi -->
+
+
+		<!-- header -->
+		<div id="header">
+			<div class="header">
+				<div class="txt">
+					<strong>PC방 포인트 모으고 아이템으로 교환!</strong>
+					<p><strong>이벤트 기간</strong>3/28(수)  점검 후~ 4/25(수) 점검 전 까지/p>
+					<p>PC방에서 로스트사가 플레이 하고 상품 받아가자!!</p>
+				</div>
+
+				<!-- btnPcFindBox -->
+				<div class="btnPcFindBox">
+					<a href="http://pcbang.nexon.com/promotion/pcbangfind?serviceCode=47" onClick="window.open(this.href, '', 'width=610, height=650'); return false;" target="_blank" class="btnPcFind" title="로사 PC방 찾기">로스트사가 PC방에는 언제나 특별한 것이 있다!
+새학기 새로운 친구들과 PC방에서 엄청난 보상을 받아가세요~!!</a>
+				</div>
+				<!-- //btnPcFindBox -->
+			</div>
+		</div>
+		<!-- //header -->
+
+
+		<!-- layoutBox -->
+		<div class="layoutBox">
+			<!-- event01 -->
+			<div id="event01" style="position: absolute; top: 0px;"></div>
+	
+			<div id="event01_layout" class="imgSnap" style="">
+				<div class="centerBox" style="height: 1130px;">
+
+					<h2>
+						<span class="title">이벤트 1. 포인트 교환소</span>
+						<button type="button" class="btnPointList" title="포인트 교환 내역 보기">포인트 교환 내역 보기</button>
+						<!-- layerPop -->
+						<div class="layerPop">
+							<h3>포인트 교환내역 보기</h3>
+							<div class="cont">
+								<table>
+									<caption>포인트 교환 목록</caption>
+									<colgroup>
+										<col style="width: 15%" />
+										<col style="width: 30%" />
+										<col style="width: *" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">번호</th>
+											<th scope="col">획득일자</th>
+											<th scope="col">아이템</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>1</th>
+											<td>2015.06.30</td>
+											<td>소망의장비보급</td>
+										</tr>
+										<tr>
+											<th>2</th>
+											<td>2015.06.30</td>
+											<td>차원조각꾸러미</td>
+										</tr>
+										<tr>
+											<th>3</th>
+											<td>2015.06.30</td>
+											<td>레어영구장비</td>
+										</tr>
+										<tr>
+											<th>4</th>
+											<td>2015.06.30</td>
+											<td>영구용병소환서</td>
+										</tr>
+										<tr>
+											<th>5</th>
+											<td>2015.06.30</td>
+											<td>레어용병소환서</td>
+										</tr>
+										<tr>
+											<th>6</th>
+											<td>2015.06.30</td>
+											<td>영구용병패키지</td>
+										</tr>
+										<tr>
+											<th>7</th>
+											<td>2015.06.30</td>
+											<td>레어장비선택권</td>
+										</tr>
+										<tr>
+											<th>8</th>
+											<td>2015.06.30</td>
+											<td>스폐셜용병패키지</td>
+										</tr>
+										<tr>
+											<th>9</th>
+											<td>2015.06.30</td>
+											<td>스폐셜용병패키지<br />+바니걸코스튬</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<button type="button" class="btnLayerClose" title="팝업 닫기">닫기</button>
+						</div>
+						<!-- //layerPop -->
+			</h2>
+
+					<!-- pointCheckBox -->
+					<div class="pointCheckBox">
+						<h3>나의  PC방 포인트</h3>
+						<div class="inputBox">500,000,000</div>
+						<span>점</span>
+						<button type="button" class="btnPointCheck" title="포인트 조회">포인트 조회</button>
+						<p>PC방 포인트는? 20분에 1,000포인트씩 획득이 됩니다.</p>
+					</div>
+					<!-- //pointCheckBox -->
+
+					<!-- goodsList -->
+					<div class="goodsList">
+						<ul>
+							<li>
+								<p><strong>몬스터코인 3개</strong> 2,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<div class="getOk">지급완료</div>
+							</li>
+							<li>
+								<p><strong>레이드티켓 2개</strong> 3,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>레어 영구장비보급 (1일3회)</strong> 5,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>특별한 상자 (3회)</strong> 8,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>액세서리 상자 패키지 (1회)</strong> 15,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>아주 특별한 상자 (1회)</strong> 25,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>레어장비선택권2 (1회)</strong> 40,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>유니크 장비보급 (1회)</strong> 60,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<p><strong>초대박 메달상자 (1회)</strong> 100,000 포인트</p>
+								<button type="button" class="btnGoodsGet" title="포인트 교환하기">포인트 교환하기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+						</ul>
+						<div class="char"></div>
+					</div> 
+					<!-- //goodsList -->
+					
+				</div>
+			</div>
+			<!-- //event01 -->
+	
+			<!-- event02 -->
+			<div id="event02" style="position: absolute; top: 1890px;"></div>
+	
+			<div id="event02_layout" class="imgSnap" style="">
+				<div class="centerBox" style="height: 1074px;">
+
+					<h2>이벤트 2. PC방에서는 로사접속 > 출석체크!</h2>
+
+					<!-- stepInfo -->
+					<div class="stepInfo">
+						<h3>게임에 접속한 뒤에 현재 페이지의 아이템받기를 클릭해주세요!</h3>
+						<p>로스트사가 게임접속 &rarr; 이벤트 페이지 이동 &rarr; 매일매일 받기 클릭하면 끝! &ldquo;이번 출석부는 2배로 제공해드립니다.&rdquo; 예) 모두 출석이 완료되면, 출석부를 갱신하여 추가로 획득이 가능합니다.</p>
+					</div>
+					<!-- //stepInfo -->
+
+					<!-- attend -->
+					<div class="attend">
+						<div class="tit">
+							<h3>이벤트 기간 동안 나의 게임접속 출석 횟수</h3>
+							<!-- <span class="attendCount">8</span> -->
+							<!-- <span class="attendDay">일</span> -->
+							<span class="login">로그인 후 확인 가능합니다</span>
+						</div>
+						<ul class="attendList">
+							<li>
+								<strong>1일 출석시 행운의 장비보급</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<div class="getOk">지급완료</div>
+							</li>
+							<li>
+								<strong>2일 출석시 소망의 장비보급</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>3일 출석시 차원조각 100개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>4일 출석시 레어코스튬 패키지</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>5일 출석시 차원조각 300개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>6일 출석시 레어영구 장비보급</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li class="end">
+								<strong>7일 출석시 유니크 장비 합성기</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>8일 출석시 차원조각 500개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>9일 출석시 레이드 티켓 10개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>10일 출석시 액세서리 충전기 3개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>11일 출석시 차원조각 700개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>12일 출석시 프리미엄 닉네임</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li>
+								<strong>13일 출석시 차원조각 1,000개</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<!-- <div class="getOk">지급완료</div> -->
+							</li>
+							<li class="end">
+								<strong>14일 출석시 유니크 장비 합성기</strong>
+								<button type="button" class="btnGoodsGet" title="받기">받기</button>
+								<div class="getOk">지급완료</div>
+							</li>
+						</ul>
+					</div>
+					<!-- //attend -->
+
+					<!-- infoBox -->
+					<dl class="infoBox">
+						<dt>이것만은 기억하자!</dt>
+						<dd>1. 포인트는 20분에 1,000포인트씩 획득이 가능합니다. 각 아이템 당 교환 횟수가 있으니 참고해주세요.</dd>
+						<dd>2. 게임 아이템은 인게임 내 보관함에서 확인이 가능합니다. (약간의 시간이 소요될 수 있습니다)</dd>
+						<dd>3. 누적 출석에 따른 보상입니다. 남은 기간이 14일보다 적다면 14일 출석 보상은 받을 수 없습니다.</dd>
+						<dd>4. 14일 출석을 완료하면, 출석부가 갱신되어 총 28번 출석이 가능합니다.</dd>
+					</dl>
+					<!-- //infoBox -->					
+				</div>
+			</div>
+			<!-- //event02 -->
+		</div>
+		<!-- //layoutBox -->
+
+
+		<!-- footer -->
+		<div id="footer">ⓒ IO Entertainment Co., Ltd. All Rights Reserved.</div>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+</body>
+</html>
