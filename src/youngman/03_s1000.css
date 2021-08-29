@@ -109,8 +109,6 @@ label > div > img {
     height: 43%;
     overflow: hidden;
     transform: translate(-50%, -50%);
-    background-color: gray;
-    border-radius: 7px;
 }
 .btn {
     float: left;
