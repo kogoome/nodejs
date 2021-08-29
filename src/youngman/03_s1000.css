@@ -7,10 +7,12 @@ body{
     height: 205.5vw;
     text-align: center;
 }
-.overlay {
+.layout > .overlay {
     width: inherit;
     height: inherit;
 }
+
+
 /*탑*/
 .top {
     height: 25.67%;
@@ -32,6 +34,12 @@ body{
     margin-top: 2.5%;
     margin-bottom: 2.5%;
 }
+.top-sbj-sb2 {
+    width: 100%;
+    height: 42.8%;
+    margin-top: 2.64%;
+    margin-bottom: 2.64%;
+}
 .top-sbj-sb div {
     display: inline-block;
     line-height: 80%;
@@ -40,6 +48,9 @@ body{
     font-size: 2.9em;
 }
 .top-sbj-sb img {
+    height: 100%;
+}
+.top-sbj-sb2 img {
     height: 100%;
 }
 /*섹션*/
@@ -93,7 +104,7 @@ label > div > img {
     display: inline-block;
     float: left;
     padding-top: 3%;
-    width:28%;
+    width:29%;
     height:100%;
 }
 /*푸터*/
