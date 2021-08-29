@@ -15,7 +15,7 @@ body{
 /*탑*/
 .top {
     height: 25.67%;
-    background: url('/src/youngman/image/topbg_1.png') no-repeat center bottom/100% 100%;
+    background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
     text-align: center;
     position: relative;
 }
