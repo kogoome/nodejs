@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* default */
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    font-size: 12px;
+    /*font*/
+    font-family: '돋움', dotum, Helvetica, sans-serif;
+    line-height: 1;
+}
+
+dl,ul,ol,li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+article,aside,canvas,details,figcaption,figure,header,footer,hgroup,
+menu,nav,section,
+    {
+    display: block;
+}
+
+input,select,textarea,button {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+label {
+    cursor: pointer;
+}
+
+button,input {
+    line-height: normal;
+}
+
+button,select {
+    text-transform: none;
+}
+
+button {
+    border: 0;
+    line-height: 1;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    border: 0px solid !important;
+    ;
+    background: none !important;
+    ;
+}
+
+/*Common*/
+.layout {
+    width: 100vw;
+    height: 205.5vw;
+    text-align: center;
+}
+
+
+/*01_main*/
+
+
+
+.top {
+    height: 25.67%;
+    background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
+}
+
+.top-sbj {
+    padding-top: 18%;
+}
+
+.mt {
+    width: 85%;
+}
+
+.section {
+    height: 60.81%;
+    background: url('image/01_main_image.jpg') no-repeat center bottom/100% 100%;
+    text-align: center;
+}
+
+.section-content {
+    position: relative;
+    top: 87%;
+    left: 50%;
+    width: 52.95%;
+    height: 10%;
+    border-radius: 6px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.mb {
+    position: absolute;
+    height: 100%;
+    left: 0;
+}
+
+.mb:hover {
+    left: -105.85vw;
+}
+
+/*238기준*/
+.footer {
+    height: 13.52%;
+    background-color: #aaaaaa;
+    color: #626262;
+}
+
+.footer-logo {
+    padding-top: 9%;
+}
+
+.ml {
+    width: 65%
+}
+
+.overlay {
+    width: inherit;
+    height: inherit;
+}
