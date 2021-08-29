@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <!--css-->
-  <link rel="stylesheet" href="14.css">
 </head>
 <body>
 <div class="layout">
@@ -52,4 +50,107 @@
   </div>
 </div>
 </body>
+<style>
+    body{
+        background-color: #45a5e8;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    .layout {
+        width: 100vw;
+        height: 205.5vw;
+        text-align: center;
+    }
+    .layout > .overlay {
+        width: inherit;
+        height: inherit;
+        background: url("image/11_backgound.png") no-repeat center bottom/100% 100%;
+    }
+
+    /*탑*/
+    .top {
+        position: relative;
+        height: 39%;
+        text-align: center;
+    }
+    .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 85%;
+    }
+    .title span {
+        color: #97ACE5;
+        font-weight: bold;
+    }
+    .title > .white {
+        letter-spacing: -0.08em;
+        font-size: 4.1em;
+        color: white;
+        padding: 1.5%;
+    }
+    .white > div {
+        padding: 1.2%;
+    }
+    .title > .blue {
+        letter-spacing: -0.08em;
+        font-size: 2.3em;
+        color: #97ABE6;
+        padding: 0.5% 0.5% 3%;
+    }
+    .blue > div {
+        padding: 1.3%;
+    }
+    .section {
+        position: relative;
+        height: 61%;
+        text-align: center;
+    }
+    .section-content {
+        position: absolute;
+        left: 50%;
+        width: 78%;
+        height: 89%;
+        transform: translate(-50%, 0);
+    }
+    .img {
+        background: url("image/12_result_image.png") no-repeat center bottom/100% 100%;
+        height: 72%;
+    }
+    .imgsave {
+        height: 10%;
+        background: url("image/12_result_button1.png") no-repeat center bottom/100% 100%;
+    }
+    .footer {
+        margin-top: 4%;
+        height: 17%;
+        background-color: #135EBC;
+        display: flex;
+        justify-content: space-between;
+    }
+    .text_box, .hashtag_img_area {
+
+        height: 78%;
+        color: white;
+        text-align: left;
+        padding-top: 4%;
+    }
+    .text_box {
+        width: 55%;
+    }
+    .hashtag_img_area {
+        width: 45%;
+    }
+    .text_box > div {
+        letter-spacing: -0.08em;
+        padding: 1% 1% 1% 9%;
+        font-size: 1.9em;
+    }
+    .hashtag_img {
+        width: 91%;
+        height: 83%;
+        background: url("image/12_result_button2.png") no-repeat center bottom/100% 100%;
+    }
+</style>
 </html>
