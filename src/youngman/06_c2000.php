@@ -18,7 +18,7 @@
             </div>
             
             <div class="section">
-               <div class="result-img"><img src="image/04_c1002.png" alt=""></div>
+               <div class="result-img"><img src="image/resultbox.png" alt=""></div>
                 <div class="section-content">
                     <label><input class="radio" name="1" type="radio"><div style="background:url('image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
                     
@@ -53,13 +53,13 @@
             <div class="footer">
                 <div class="footer-content">
                     <div class="btn">
-                        <a id="prev" class="btn_prev" href="03_s1000" role="button"><span class="blind"></span></a>
+                        <a id="prev" class="btn_prev" href="05_s2000" role="button"><span class="blind"></span></a>
                     </div>
                     <div class="info_area">
                         <div>상의 스타일 완성</div>
                     </div>
                     <div class="btn">
-                        <a id="next" class="btn_next" href="05_c2000" role="button"><span class="blind"></span></a>
+                        <a id="next" class="btn_next" href="07_s3000" role="button"><span class="blind"></span></a>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
         margin: 0 auto;
         display: flex;
         width: 80%;
-        height: 10%;
+        height: 8%;
     }
     .section label{
         margin-right: 5.5%;
@@ -177,24 +177,27 @@
     }
     .section-content > p{
         width:20%;
-        margin-top: 8px;
+        margin-top: 5%;
         margin-right: 5.5%;
-        font-size: 1.5em;
+        font-size: 2em;
+        font-weight: bold;
+        color: #696969;
     }
     .section-content > p:last-child{
         margin-right: 0;
     }
+    
     /*result img*/
     .result-img{
         width: 100%;
-        margin-bottom: 10%;
+        margin: 3% 0;
     }
     .result-img > img{
         width: 80%;
     }
 
 
-    /*푸터*/
+    /*footer*/
     .footer {
         height: 13.52%;
         background-color: white;
@@ -227,7 +230,7 @@
 
     .info_area div {
         color: white;
-        font-size: 3.4em;
+        font-size: 3em;
         margin-top: 6%;
     }
 
@@ -236,14 +239,19 @@
         width: 100%;
         height: 100%;
         vertical-align: top;
+        background: url("image/btn_btm_lr.png") no-repeat top/cover;
     }
 
     .btn_prev {
-        background: url("image/pre.png") no-repeat center bottom/100% 100%;
+        background-position: 0 0%;
+        /*비활성화*/
+        /*background-position: 0 33.35%;*/
     }
 
     .btn_next {
-        background: url("image/next.png") no-repeat center bottom/100% 100%;
+        background-position: 0 67%;
+        /*비활성화*/
+        /*background-position: 0 100%;*/
     }
 
 </style></html>

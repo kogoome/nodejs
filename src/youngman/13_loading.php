@@ -33,10 +33,10 @@
 
       .overlay {
           position: absolute;
-          top: 50%;
+          top: 55%;
           left: 50%;
           width: 75%;
-          height: 35%;
+          height: 50%;
           overflow: hidden;
           transform: translate(-50%, -50%);
       }
@@ -62,6 +62,7 @@
       .overlay>.loading {
           height: 20%;
           background: url('image/loading.gif') no-repeat center bottom/contain;
+          opacity: 20%;
           margin: 5%;
       }
 

@@ -1,0 +1,183 @@
+body {
+    background-color: #45a5e8;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.layout {
+    width: 100vw;
+    height: 205.5vw;
+    text-align: center;
+}
+
+.layout > .overlay {
+    width: inherit;
+    height: inherit;
+}
+
+/*top*/
+.top {
+    height: 25.67%;
+    background: url('/image/topbg_1.png') no-repeat center bottom/100% 100%;
+    text-align: center;
+    position: relative;
+}
+
+.top-sbj {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.top-sbj-sb {
+    width: 100%;
+    height: 19%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.top-sbj-sb2 {
+    width: 100%;
+    height: 42.8%;
+    margin-top: 2.64%;
+    margin-bottom: 2.64%;
+}
+
+.top-sbj-sb div {
+    display: inline-block;
+    line-height: 80%;
+    color: white;
+    font-weight: bolder;
+    font-size: 2.9em;
+}
+
+.top-sbj-sb img {
+    height: 100%;
+}
+
+.top-sbj-sb2 img {
+    height: 100%;
+}
+
+/*section*/
+.section {
+    height: 60.81%;
+    background-color: white;
+    text-align: center;
+}
+
+.section-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 77%;
+    border-radius: 6px;
+    transform: translate(-50%, -50%);
+}
+
+.flex-container {
+    display: flex;
+    height: 23.33%;
+    justify-content: space-between;
+}
+
+.flex-container > label {
+    width: 29%;
+    height: 100%;
+}
+
+label div {
+    width: 100%;
+    height: 100%;
+}
+
+label > div > img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+[type=radio] {
+    display: none;
+}
+
+[type=radio]:checked + div > img {
+    opacity: 1;
+}
+
+.flex-container-caption {
+    display: flex;
+    text-align: center;
+    font-size: 1.5em;
+    height: 10%;
+    justify-content: space-between;
+}
+
+.name {
+    display: inline-block;
+    float: left;
+    padding-top: 3%;
+    width: 29%;
+    height: 100%;
+}
+
+/*footer*/
+.footer {
+    height: 13.52%;
+    background-color: white;
+}
+
+.footer-content {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    width: 80%;
+    height: 43%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    float: left;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+}
+
+.info_area {
+    float: left;
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
+}
+
+.info_area div {
+    color: white;
+    font-size: 3em;
+    margin-top: 6%;
+}
+
+.btn_prev,
+.btn_next {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    background: url("image/btn_btm_lr.png") no-repeat top/cover;
+}
+
+.btn_prev {
+    background-position: 0 0%;
+    /*비활성화*/
+    /*background-position: 0 33.35%;*/
+}
+
+.btn_next {
+    background-position: 0 67%;
+    /*비활성화*/
+    /*background-position: 0 100%;*/
+}
