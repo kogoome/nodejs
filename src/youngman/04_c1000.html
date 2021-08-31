@@ -18,7 +18,22 @@
             </div>
             
             <div class="section">
-               <div class="result-img"><img src="image/resultbox.png" alt=""></div>
+               <div class="result-img">
+               <div class="result-box">
+                  
+                   <img class="body" src="/image/parts/avatar_result_body.png" alt="">
+                   <img class="t-shirt" src="/image/parts/avatar_result_basic1.png" alt="">
+                   <img class="pants" src="/image/parts/avatar_result_basic2.png" alt="">
+               </div>
+               
+               
+               
+               
+               
+               
+               
+               </div>
+               
                 <div class="section-content">
                     <label><input class="radio" name="1" type="radio"><div style="background:url('image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
                     
@@ -190,9 +205,15 @@
     /*result img*/
     .result-img{
         width: 100%;
-        margin: 3% 0;
+        height: 65%;
     }
-    .result-img > img{
+    .result-box {
+        position: relative;
+        width: 100%;
+    }
+    .result-box > img{
+        position: absolute;
+        left: 10%;
         width: 80%;
     }
 
@@ -208,7 +229,7 @@
         top: 30%;
         left: 50%;
         width: 80%;
-        height: 43%;
+        height: 42.3%;
         overflow: hidden;
         transform: translate(-50%, -50%);
     }
@@ -249,7 +270,7 @@
     }
 
     .btn_next {
-        background-position: 0 67%;
+        background-position: 0 66.7%;
         /*비활성화*/
         /*background-position: 0 100%;*/
     }
