@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"helllo world",
     "debug": "node src/**.*",
-    "build": "esbuild src/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
-    "server": "nodemon src/main.js"
+    "build": "esbuild src/ch4. 모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
+    "server": "nodemon src/ch5. RESTful API 서버/blogServer.js"
   },
   "engines": {
     "node": "14.17.2"
