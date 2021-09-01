@@ -3,24 +3,24 @@
 /* eslint-disable no-console */
 
 const express = require('express')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 
 const userRouter = express.Router()
 
-const app = express() // 익스프레스 앱 객체
-app.use(bodyParser.json)
+const app = express()
+app.use(express.json())
 
 const PORT = 5000
-
-userRouter.get('/', (req, res) => {
-  res.send(`User list`)
-})
 
 const USERS = {
   jack: {
     nickname: 'johnson',
   },
 }
+
+userRouter.get('/', (req, res) => {
+  res.send(`User list`)
+})
 
 userRouter.param('id', (req, res, next, value) => {
   // 2. 검출된 아이디정보로부터
@@ -43,7 +43,6 @@ userRouter.post('/', (req, res) => {
 })
 
 userRouter.post(`/:id/nickname`, (req, res) => {
-  // res.body:{'nickname':}
   // @ts-ignore
   const { user } = req
   const { nickname } = req.body
