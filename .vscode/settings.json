@@ -20,5 +20,13 @@
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+
+
   }
 }
