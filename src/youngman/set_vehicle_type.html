@@ -1,0 +1,108 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+?>
+<link rel="stylesheet" href="03_s1000.css">
+<script>
+$( document ).ready(function() {
+
+    $('input[type=radio][name=vehicle_type]').change(function() {
+        $(".btn_next").css("background-position", "0 67%");
+        $("#prev_img").attr("src", "/image/parts/" + this.value + ".png");
+    });
+
+    $(".btn_next").click(function(){
+
+        var vehicle_type = $('input[name="vehicle_type"]:checked').val();
+
+        if( vehicle_type === undefined ) {
+            alert("상의 선택해 주세요.");
+            return;
+        } else {
+
+            var json_data = {
+                                 vehicle_type : vehicle_type
+                                ,now_step     : 'set_vehicle_type'
+                            };
+            json_data = JSON.stringify(json_data);
+
+            $.ajax({
+                type      : "POST"
+                ,url      : "/process/process.php"
+                ,cache    : false
+                ,dataType : "text"
+                ,data     : json_data
+                ,success  : function(result) {
+                    console.log(JSON.stringify(result));
+                    data = JSON.parse(result);
+
+                    if(data.message == "success" ) {
+                        location.href=data.url;
+                    } else {
+
+                    }
+                 }
+                ,error : function(err) {
+                    alert(err.responseText);
+                 }
+            }); // end ajax
+        } // end if
+    });
+
+});
+</script>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+</head>
+
+
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top">
+      <div class="top-sbj">
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
+        <div class="top-sbj-sb2"><img src="/image/09_s4000_toptxt1.gif" alt=""></div>
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-content">
+        <div class="flex-container">
+          <label><input name="vehicle_type" id="vehicle_type" value="500" type="radio"><div style="background:url('/image/color07.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="vehicle_type" id="vehicle_type" value="5015" type="radio"><div style="background:url('/image/parts/s5010.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="vehicle_type" id="vehicle_type" value="5024" type="radio"><div style="background:url('/image/parts/s5020.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">선택 안함</div>
+          <div class="name">따릉이</div>
+          <div class="name">오토바이</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="vehicle_type" id="vehicle_type" value="5039" type="radio"><div style="background:url('/image/parts/s5030.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="vehicle_type" id="vehicle_type" value="5047" type="radio"><div style="background:url('/image/parts/s5040.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="vehicle_type" id="vehicle_type" value="5050" type="radio"><div style="background:url('/image/parts/s5050.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">퀵보드</div>
+          <div class="name">스케이트 보드</div>
+          <div class="name">휠체어</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="vehicle_type" id="vehicle_type" value="5062" type="radio"><div style="background:url('/image/parts/s5060.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">자동차</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="btn"><a id="prev" class="btn_prev" href="08_c3000" role="button"><span class="blind"></span></a></div>
+            <div class="info_area"><div>선택 완료</div></div>
+            <div class="btn"><span class="btn_next""><span class="blind"></span></span></div>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

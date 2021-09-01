@@ -1,0 +1,172 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+
+// 실제로 선택한 이미지를 합친다.
+// hair_color
+// top_color $_SESSION["TOP_COLOR"]
+// bottom_color
+// vehicle_type
+// flag_type
+
+$hair_color   = $_SESSION["HAIR_TYPE"].$_SESSION["HAIR_COLOR"];
+$top_color    = $_SESSION["TOP_TYPE"].$_SESSION["TOP_COLOR"];
+$bottom_color = $_SESSION["BOTTOM_TYPE"].$_SESSION["BOTTOM_COLOR"];
+$vehicle_type = $_SESSION["VEHICLE_TYPE"];
+$flag_type    = $_SESSION["FLAG_TYPE"];
+
+
+// 휠체어는 따로 추가
+if( $vehicle_type == "5050" ) {
+
+    // 하의종류 구별
+    // 긴바지3 + 레깅스1 => 같은거사용 5050_3_X.png
+    // 롱치마5 => 5050_5_X.png
+    // 주름치마6 => 5050_6_X.png
+    // 츄리닝7 => 5050_7_X.png
+    //
+    // 나머지는 모두 5050_0_0.png (맨다리)
+    $_bottom = substr($bottom_color,-2, 1 );
+
+    if( $_bottom == "1" ) {
+        $vehicle_type = "5050_3_".$_SESSION["BOTTOM_COLOR"];
+
+    } else if( $_bottom == "3" || $_bottom == "5" || $_bottom == "6" || $_bottom == "7" ) {
+        $vehicle_type = "5050_".$_bottom."_".$_SESSION["BOTTOM_COLOR"];
+
+    } else {
+        $vehicle_type = "5050_0_0";
+
+    }
+}
+
+$dest = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/result_image_back.png');
+$src0 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/avatar_result_body.png');
+$src1 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/'.$hair_color  .'.png');
+$src2 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/'.$top_color   .'.png');
+$src3 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/'.$bottom_color.'.png');
+$src4 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/'.$flag_type   .'.png');
+$src5 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/'.$vehicle_type.'.png');
+
+imagealphablending($dest, true);
+imagesavealpha($dest, true);
+
+imagecopy($dest, $src0, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src1, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src2, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src3, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src4, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src5, 0, 0, 0, 0, 1020, 1021);
+
+imagepng($dest, $_SERVER['DOCUMENT_ROOT'].'/image/result/'.$tran_key.'.png');
+
+//echo "<img src='//image/result/abc.png'>";
+imagedestroy($dest);
+imagedestroy($src0);
+imagedestroy($src1);
+imagedestroy($src2);
+imagedestroy($src3);
+imagedestroy($src4);
+imagedestroy($src5);
+
+    $sql = "update post_naeum
+            set
+                 result_pic = '/image/result/".$tran_key.".png'
+                ,fin_dtime = now()
+            where tran_key = '".$tran_key."'
+            ";
+
+    mysqli_query($my_conn, $sql);
+?>
+
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          vertical-align: top;
+          font-size: 12px;
+          /*font*/
+          font-family: 'Nanum Gothic', sans-serif;
+          line-height: 1;
+      }
+
+      span {
+          display: inline;
+      }
+
+      .layout {
+          width: 100vw;
+          height: 205.5vw;
+          text-align: center;
+          position: relative;
+          background: url(/image/11_backgound.png) no-repeat center bottom/100% 100%;
+      }
+
+      .overlay {
+          position: absolute;
+          top: 55%;
+          left: 50%;
+          width: 75%;
+          height: 50%;
+          overflow: hidden;
+          transform: translate(-50%, -50%);
+      }
+
+      .overlay>div {
+          margin: 0 auto;
+          color: white;
+          font-size: 3.5em;
+          text-align: center;
+          line-height: 1.3em;
+          letter-spacing: -0.08em;
+      }
+
+      span {
+          font-weight: bold;
+          font-size: 1.1em;
+      }
+      .cdots {
+          font-size: 0.8em;
+          letter-spacing: -0.13em;
+      }
+
+      .overlay>.loading {
+          height: 20%;
+          background: url('/image/loading.gif') no-repeat center bottom/contain;
+          opacity: 20%;
+          margin: 5%;
+      }
+
+      .overlay>.top {
+          height: 10%;
+          margin: 2%;
+          background: url('/image/topbg_txt_mark1.png') no-repeat center bottom/12%;
+      }
+
+      .overlay>.footer {
+          height: 10%;
+          margin: 3%;
+          background: url('/image/topbg_txt_mark2.png') no-repeat center bottom/12%;
+      }
+  </style>
+<script>
+
+
+
+</script>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+<meta http-equiv="refresh" content="3; url=/my_result">
+</head>
+
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top"></div>
+    <div class="top_txt"><span><?=$_SESSION['USER_NM']?></span> 님은 지금<br>외출 준비중 <span class="cdots">&#183; &#183; &#183;</span></div>
+    <div class="loading"></div>
+    <div class="footer_txt">잠시만 기다려 주세요.</div>
+    <div class="footer"></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,169 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+?>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="overlay">
+
+            <div class="title">
+                <img src="/image/topbg_txt_mark1.png" alt="">
+                <div class="white">
+                    <div><span><?=$_SESSION['USER_NM']?></span> 님</div>
+                    <div>2021 온라인 청년 퍼레이드에</div>
+                    <div>참여해주셔서 고맙습니다.</div>
+                </div>
+                <div class="blue">
+                    <div>주변 사람에게 추천해서</div>
+                    <div>더 많은 사람들이 함께하는</div>
+                    <div>청년 퍼레이드 만들어가요!</div>
+                </div>
+                <img src="/image/topbg_txt_mark2.png" alt="">
+                <div class="sms">
+                    <a href="https://m.facebook.com/2030youthpolicy/" target="_blank" class="facebook"></a>
+                    <a href="https://www.instagram.com/youth_policy/" target="_blank" class="instagram"></a>
+                    <a href="https://www.youtube.com/channel/UCYwQ_DtHT_mQ2YDYrbijsfg?app=desktop" target="_blank" class="youtube"></a>
+                </div>
+            </div>
+            <div class="footer_top"></div>
+            <div class="footer">
+                <div class="footer-logo">
+                    <a href="https://2030.go.kr/main" target="_blank"><img src="/image/01_main_logo.png" class="footerlogo" alt="main-logo"></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<style>
+    body {
+        margin: 0;
+        background-color: #45a5e8;
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    .layout {
+        width: 100vw;
+        height: 100vw;
+        text-align: center;
+    }
+
+    .layout>.overlay {
+        width: inherit;
+        height: inherit;
+        background-color: #1a306d;
+    }
+
+    .title {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 55%;
+    }
+
+    .title span {
+        color: #97ACE5;
+        font-weight: bold;
+    }
+
+    .title>.white {
+        letter-spacing: -0.08em;
+        font-size: 4.1em;
+        color: white;
+        padding: 1.5%;
+    }
+
+    .white>div {
+        padding: 1.2%;
+    }
+
+    .title>.blue {
+        letter-spacing: -0.08em;
+        font-size: 2.6em;
+        color: #97ABE6;
+        padding: 0.5% 0.5% 3%;
+    }
+
+    .blue>div {
+        padding: 1.3%;
+    }
+
+    .footer {
+        position: relative;
+        height: 17%;
+        background-color: #ededed;
+    }
+
+    .footer-logo {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 70%;
+        height: 43%;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+        padding-top: 9%;
+    }
+
+    .footerlogo {
+        width: 90%
+    }
+
+    .title>img {
+        width: 8%;
+        padding: 10px;
+    }
+
+    .sms {
+        display: flex;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        width: 60%;
+        height: 30%;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+    }
+
+    .sms>a {
+        width: 30%;
+        height: 100%;
+        display: inline-block;
+    }
+
+    .sms>a:nth-child(1) {
+        background: url(/image/13_bye_1face.png)no-repeat center/100%;
+        margin: 0 4%;
+    }
+
+    .sms>a:nth-child(2) {
+        background: url(/image/13_bye_2insta.png)no-repeat center/100%;
+        margin: 0 4%;
+    }
+
+    .sms>a:nth-child(3) {
+        background: url(/image/13_bye_3you.png)no-repeat center/100%;
+        margin: 0 4%;
+    }
+
+    .footer_top {
+        width: 100%;
+        height: 28%;
+    }
+
+    }
+
+</style>
+
+</html>
+
+<?
+    session_unset();   // 모든 세션 변수의 등록 해지
+    session_destroy(); // 세션 아이디의 삭제
+?>

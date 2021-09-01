@@ -1,0 +1,114 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+?>
+<link rel="stylesheet" href="03_s1000.css">
+<script>
+$( document ).ready(function() {
+
+    $('input[type=radio][name=top_type]').change(function() {
+        $(".btn_next").css("background-position", "0 67%");
+        $("#prev_img").attr("src", "/image/parts/" + this.value + ".png");
+    });
+
+    $(".btn_next").click(function(){
+
+        var top_type = $('input[name="top_type"]:checked').val();
+
+        if( top_type === undefined ) {
+            alert("상의를 선택해 주세요.");
+            return;
+        } else {
+
+            var json_data = {
+                                 top_type : top_type
+                                ,now_step  : 'set_top_type'
+                            };
+            json_data = JSON.stringify(json_data);
+
+            $.ajax({
+                type      : "POST"
+                ,url      : "/process/process.php"
+                ,cache    : false
+                ,dataType : "text"
+                ,data     : json_data
+                ,success  : function(result) {
+                    console.log(JSON.stringify(result));
+                    data = JSON.parse(result);
+
+                    if(data.message == "success" ) {
+                        location.href=data.url;
+                    } else {
+
+                    }
+                 }
+                ,error : function(err) {
+                    alert(err.responseText);
+                 }
+            }); // end ajax
+        } // end if
+    });
+
+});
+</script>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+</head>
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top">
+      <div class="top-sbj">
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
+        <div class="top-sbj-sb2"><img src="/image/05_s2000_toptxt1.gif" alt=""></div>
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-content">
+        <div class="flex-container">
+          <label><input name="top_type" id="top_type" value="201" type="radio"><div style="background:url('/image/parts/s2010.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="202" type="radio"><div style="background:url('/image/parts/s2020.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="203" type="radio"><div style="background:url('/image/parts/s2030.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">튜브탑</div>
+          <div class="name">홀터넥</div>
+          <div class="name">민소매</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="top_type" id="top_type" value="204" type="radio"><div style="background:url('/image/parts/s2040.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="205" type="radio"><div style="background:url('/image/parts/s2050.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="206" type="radio"><div style="background:url('/image/parts/s2060.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">크롭반팔</div>
+          <div class="name">반팔</div>
+          <div class="name">긴팔</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="top_type" id="top_type" value="207" type="radio"><div style="background:url('/image/parts/s2070.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="208" type="radio"><div style="background:url('/image/parts/s2080.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="top_type" id="top_type" value="209" type="radio"><div style="background:url('/image/parts/s2090.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">셔츠</div>
+          <div class="name">재킷</div>
+          <div class="name">트레이닝복<br>상의</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="btn">
+          <a id="prev" class="btn_prev" href="/set_hair_color" role="button"><span class="blind"></span></a>
+        </div>
+        <div class="info_area"><div>상의 선택 완료</div></div>
+        <div class="btn">
+          <span class="btn_next"><span class="blind"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

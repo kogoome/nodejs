@@ -1,0 +1,116 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+?>
+<link rel="stylesheet" href="03_s1000.css">
+<script>
+$( document ).ready(function() {
+
+    $('input[type=radio][name=flag_type]').change(function() {
+        $(".btn_next").css("background-position", "0 67%");
+        $("#prev_img").attr("src", "/image/parts/" + this.value + ".png");
+    });
+
+    $(".btn_next").click(function(){
+
+        var flag_type = $('input[name="flag_type"]:checked').val();
+
+        if( flag_type === undefined ) {
+            alert("깃발을 선택해 주세요.");
+            return;
+        } else {
+
+            var json_data = {
+                                 flag_type : flag_type
+                                ,now_step     : 'set_flag_type'
+                            };
+            json_data = JSON.stringify(json_data);
+
+            $.ajax({
+                type      : "POST"
+                ,url      : "/process/process.php"
+                ,cache    : false
+                ,dataType : "text"
+                ,data     : json_data
+                ,success  : function(result) {
+                    console.log(JSON.stringify(result));
+                    data = JSON.parse(result);
+
+                    if(data.message == "success" ) {
+                        location.href=data.url;
+                    } else {
+
+                    }
+                 }
+                ,error : function(err) {
+                    alert(err.responseText);
+                 }
+            }); // end ajax
+        } // end if
+    });
+
+});
+</script>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+</head>
+
+
+<body>
+<div class="layout">
+  <div class="overlay">
+    <div class="top">
+      <div class="top-sbj">
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
+        <div class="top-sbj-sb2"><img src="/image/10_s5000_toptxt1.gif" alt=""></div>
+        <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-content">
+        <div class="flex-container">
+          <label><input name="flag_type" id="flag_type" value="4019" type="radio"><div style="background:url('image/parts/s4010.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4028" type="radio"><div style="background:url('image/parts/s4020.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4033" type="radio"><div style="background:url('image/parts/s4030.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">청년이 청년하다</div>
+          <div class="name">청년이 바꾼 오늘<br>청년이 만든 내일</div>
+          <div class="name">하랑이 풍선</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="flag_type" id="flag_type" value="4044" type="radio"><div style="background:url('image/parts/s4040.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4055" type="radio"><div style="background:url('image/parts/s4050.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4061" type="radio"><div style="background:url('image/parts/s4060.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">나랑이 풍성</div>
+          <div class="name">청년주간<br>(9.11~17)</div>
+          <div class="name">AMAZING<br>918</div>
+        </div>
+        <div class="flex-container">
+          <label><input name="flag_type" id="flag_type" value="4073" type="radio"><div style="background:url('image/parts/s4070.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4082" type="radio"><div style="background:url('image/parts/s4080.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+          <label><input name="flag_type" id="flag_type" value="4094" type="radio"><div style="background:url('image/parts/s4090.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+        </div>
+        <div class="flex-container-caption">
+          <div class="name">청년의날<br>918</div>
+          <div class="name">With Youth</div>
+          <div class="name">For Youth</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="btn">
+          <a id="prev" class="btn_prev" href="set_vehicle_type" role="button"><span class="blind"></span></a>
+        </div>
+        <div class="info_area"><div>선택 완료</div></div>
+        <div class="btn">
+          <span class="btn_next""><span class="blind"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

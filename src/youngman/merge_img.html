@@ -1,0 +1,39 @@
+<?
+
+
+$dest = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/avatar_result_body.png');
+$src1 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/1021.png');
+$src2 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/2076.png');
+$src3 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/3030.png');
+$src4 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/4019.png');
+$src5 = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/image/parts/5024.png');
+imagealphablending($dest, true);
+imagesavealpha($dest, true);
+
+imagecopy($dest, $src1, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src2, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src3, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src4, 0, 0, 0, 0, 1020, 1021);
+imagecopy($dest, $src5, 0, 0, 0, 0, 1020, 1021);
+
+
+//header('Content-Type: image/jpeg');
+imagepng($dest, $_SERVER['DOCUMENT_ROOT'].'/image/result/result.png');
+
+echo "<img src='/image/result/abc.png'>";
+imagedestroy($dest);
+imagedestroy($src1);
+imagedestroy($src2);
+imagedestroy($src3);
+imagedestroy($src4);
+imagedestroy($src5);
+
+?>
+
+
+<img src="/image/parts/avatar_result_body.png" alt=""></div>
+<img id="prev_img" src="/image/parts/1021.png" alt=""></div>
+<img id="prev_img" src="/image/parts/2076.png" alt=""></div>
+<img id="prev_img" src="/image/parts/3030.png" alt=""></div>
+<img id="prev_img" src="/image/parts/4019.png" alt=""></div>
+<img id="prev_img" src="/image/parts/5062.png" alt=""></div>
