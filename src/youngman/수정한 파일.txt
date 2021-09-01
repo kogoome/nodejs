@@ -1,3 +1,4 @@
 수정 안된 파일
 
 set_nick
+fin
