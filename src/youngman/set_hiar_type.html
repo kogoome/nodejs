@@ -10,7 +10,7 @@
 
     .layout {
         width: 100vw;
-        height: 100vh;
+        height: 205.5vw;
         text-align: center;
     }
 
@@ -37,7 +37,6 @@
         margin-bottom: 2.5%;
         font-size: 4.9em;
         color: white;
-        background-color: red;
         letter-spacing: -0.1em;
     }
 
@@ -185,7 +184,9 @@
 /*        background-position: 0 67%;*/
         background-position: 0 100%;
     }
-
+    [type=radio]:checked btn_next {
+        background-position: 0 67%
+    }
 
 </style>
 <? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
