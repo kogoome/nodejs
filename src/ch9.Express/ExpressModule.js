@@ -11,7 +11,7 @@ const PORT = 5000
 app.use(
   '/',
   (req, res, next) => {
-    console.log('middle ware1')
+    console.log('middle ware1 => ')
     setTimeout(() => {
       next()
     }, 1000)
