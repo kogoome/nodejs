@@ -1,4 +1,4 @@
-/* reset css */
+    /* reset css */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
 small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,
 aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
@@ -54,7 +54,7 @@ body {
 
 .layout {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     text-align: center;
 }
 
@@ -66,7 +66,7 @@ body {
 /*top*/
 .top {
     height: 25.67%;
-    background: url('/image/topbg_1.png') no-repeat center bottom/100% 100%;
+    background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
     text-align: center;
     position: relative;
 }
@@ -160,7 +160,7 @@ label > div > img {
 .flex-container-caption {
     display: flex;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2em;
     height: 10%;
     justify-content: space-between;
 }
@@ -173,60 +173,56 @@ label > div > img {
     height: 100%;
 }
 
-/*footer*/
-.footer {
-    height: 13.52%;
-    background-color: white;
-}
+    /*footer*/
+    .footer {
+        height: 13.52%;
+    }
 
-.footer-content {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    width: 80%;
-    height: 43%;
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-}
+    .footer-content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 80%; 
+        height: 12vw;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+    }
 
-.btn {
-    float: left;
-    display: inline-block;
-    width: 15%;
-    height: 100%;
-}
+    .info_area {
+        float: left;
+        display: inline-block;
+        width: 56vw;
+        height: 12vw;
+        background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
+    }
 
-.info_area {
-    float: left;
-    display: inline-block;
-    width: 70%;
-    height: 100%;
-    background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
-}
+    .info_area div {
+        color: white;
+        font-size: 3.4em;
+        margin-top: 6%;
+    }
 
-.info_area div {
-    color: white;
-    font-size: 3em;
-    margin-top: 6%;
-}
+    .btn {
+        float: left;
+        display: inline-block;
+        width: 12vw;
+        height: 12vw;
+    }
+    .btn_prev, .btn_next {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+        background: url("image/btn_btm_lr.png") no-repeat top/cover;
+    }
 
-.btn_prev,
-.btn_next {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    vertical-align: top;
-    background: url("image/btn_btm_lr.png") no-repeat top/cover;
-}
+    .btn_prev {
+        background-position: 0 0%;
+        /*비활성화*/
+        /*background-position: 0 33.35%;*/
+    }
 
-.btn_prev {
-    background-position: 0 0%;
-    /*비활성화*/
-    /*background-position: 0 33.35%;*/
-}
-
-.btn_next {
-/*    background-position: 0 67%;*/
-    /*비활성화*/
-    background-position: 0 100%;
-}
+    .btn_next {
+/*        background-position: 0 67%;*/
+        background-position: 0 100.7%;
+    }

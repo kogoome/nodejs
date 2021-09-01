@@ -3,7 +3,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
 ?>
 <style>
-    /* reset css */
+/* reset css */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
 small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,
 aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
@@ -52,7 +52,6 @@ a {
 /* css */
     body {
         font-family: 'Nanum Gothic', sans-serif;
-        margin: 0;
     }
 
     .layout {
@@ -150,7 +149,7 @@ a {
     .flex-container-caption {
         display: flex;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2em;
         height: 10%;
         justify-content: space-between;
     }
@@ -180,33 +179,24 @@ a {
     /*footer*/
     .footer {
         height: 13.52%;
-        background-color: white;
     }
 
     .footer-content {
         position: relative;
-        top: 30%;
+        top: 50%;
         left: 50%;
-        width: 80%;
-        height: 43%;
+        width: 80%; 
+        height: 12vw;
         overflow: hidden;
         transform: translate(-50%, -50%);
-        background-color: red;
-    }
-
-    .btn {
-        float: left;
-        display: inline-block;
-        width: 15%;
-        height: 100%;
     }
 
     .info_area {
         float: left;
         display: inline-block;
-        width: 70%;
-        height: 100%;
-        background: url("image/s1000~5000_button.png") no-repeat center bottom/100%;
+        width: 56vw;
+        height: 12vw;
+        background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
     }
 
     .info_area div {
@@ -215,6 +205,12 @@ a {
         margin-top: 6%;
     }
 
+    .btn {
+        float: left;
+        display: inline-block;
+        width: 12vw;
+        height: 12vw;
+    }
     .btn_prev, .btn_next {
         display: inline-block;
         width: 100%;
@@ -231,7 +227,7 @@ a {
 
     .btn_next {
 /*        background-position: 0 67%;*/
-        background-position: 0 100%;
+        background-position: 0 100.4%;
     }
 
 
@@ -255,7 +251,7 @@ $( document ).ready(function() {
             return;
         } else {
 
-            var json_data = {
+            var json_data = { 
                                  hair_type : hair_type
                                 ,now_step  : 'set_hair_type'
                             };

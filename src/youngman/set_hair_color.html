@@ -5,7 +5,7 @@
 <style>
     .layout {
         width: 100vw;
-        height: 205.5vw;
+        height: 100vh;
         text-align: center;
     }
 
@@ -97,14 +97,14 @@
         display: none;
     }
     div > .chimg {
-     opacity: 0;
-     }
-     [type=radio] {
-     display: none;
-     }
-     [type=radio]:checked + div > .chimg{
-        opacity: 1;
-     }
+    opacity: 0;
+    }
+    [type=radio] {
+    display: none;
+    }
+    [type=radio]:checked + div > .chimg{
+    opacity: 1;
+    }
     label {
         width:20%;
     }
@@ -125,7 +125,11 @@
 
     /*result img*/
     .result-img{
-        width: 100%;
+        position: relative;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%) ;
+        width: 50vh;
         height: 65%;
     }
     .result-box {
@@ -142,48 +146,45 @@
     /*footer*/
     .footer {
         height: 13.52%;
-        background-color: white;
     }
 
     .footer-content {
         position: relative;
-        top: 30%;
+        top: 50%;
         left: 50%;
-        width: 80%;
-        height: 43%;
+        width: 80%; 
+        height: 12vw;
         overflow: hidden;
         transform: translate(-50%, -50%);
-    }
-
-    .btn {
-        float: left;
-        display: inline-block;
-        width: 15%;
-        height: 100%;
     }
 
     .info_area {
         float: left;
         display: inline-block;
-        width: 70%;
-        height: 100%;
-        background: url("/image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
+        width: 56vw;
+        height: 12vw;
+        background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
     }
 
     .info_area div {
         color: white;
-        font-size: 3em;
+        font-size: 3.4em;
         margin-top: 6%;
     }
 
+    .btn {
+        float: left;
+        display: inline-block;
+        width: 12vw;
+        height: 12vw;
+    }
     .btn_prev, .btn_next {
         display: inline-block;
         width: 100%;
         height: 100%;
         vertical-align: top;
-        background: url("/image/btn_btm_lr.png") no-repeat top/cover;
+        background: url("image/btn_btm_lr.png") no-repeat top/cover;
     }
-
 
     .btn_prev {
         background-position: 0 0%;
@@ -193,7 +194,7 @@
 
     .btn_next {
 /*        background-position: 0 67%;*/
-        background-position: 0 100%;
+        background-position: 0 100.4%;
     }
 
 </style>
@@ -202,7 +203,7 @@ $( document ).ready(function() {
 
     $('input[type=radio][name=hair_color]').change(function() {
         $(".btn_next").css("background-position", "0 67%");
-        $("#prev_img").attr("src", "/image/parts/<?=$_SESSION["HAIR_TYPE"]?>" + this.value + ".png");
+        $("#prev_img").attr("src", "image/parts/<?=$_SESSION["HAIR_TYPE"]?>" + this.value + ".png");
     });
 
 
@@ -254,28 +255,28 @@ $( document ).ready(function() {
         <div class="overlay">
             <div class="top">
                 <div class="top-sbj">
-                    <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
-                    <div class="top-sbj-sb2"><img src="/image/04_c1000_toptxt1.gif" alt=""></div>
-                    <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb2"><img src="image/04_c1000_toptxt1.gif" alt=""></div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
                 </div>
             </div>
 
             <div class="section">
                <div class="result-img">
                    <div class="result-box">
-                        <img src="/image/parts/avatar_result_body.png" alt="">
-                        <img id="prev_img" src="/image/parts/<?=$_SESSION["HAIR_TYPE"]?>0.png" alt="">
-                       <img class="t-shirt" src="/image/parts/avatar_result_basic1.png" alt="">
-                       <img class="pants" src="/image/parts/avatar_result_basic2.png" alt="">
+                        <img src="image/parts/avatar_result_body.png" alt="">
+                        <img id="prev_img" src="image/parts/<?=$_SESSION["HAIR_TYPE"]?>0.png" alt="">
+                       <img class="t-shirt" src="image/parts/avatar_result_basic1.png" alt="">
+                       <img class="pants" src="image/parts/avatar_result_basic2.png" alt="">
                    </div>
                 </div>
 
                 <div class="section-content">
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="0" ><div style="background:url('/image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="1" ><div style="background:url('/image/color02.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="2" ><div style="background:url('/image/color03.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="3" ><div style="background:url('/image/color04.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="4" ><div style="background:url('/image/color05.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="0" ><div style="background:url('image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="1" ><div style="background:url('image/color02.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="2" ><div style="background:url('image/color03.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="3" ><div style="background:url('image/color04.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="4" ><div style="background:url('image/color05.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
                 </div>
                 <div class="section-content">
                     <p>검정</p>
@@ -285,11 +286,11 @@ $( document ).ready(function() {
                     <p>노랑</p>
                 </div>
                 <div class="section-content">
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="5" ><div style="background:url('/image/color06.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="6" ><div style="background:url('/image/color07.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="7" ><div style="background:url('/image/color08.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="8" ><div style="background:url('/image/color09.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="9" ><div style="background:url('/image/color10.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="5" ><div style="background:url('image/color06.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="6" ><div style="background:url('image/color07.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="7" ><div style="background:url('image/color08.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="8" ><div style="background:url('image/color09.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
+                    <label><input name="hair_color" id="hair_color" type="radio" class="change_color" value="9" ><div style="background:url('image/color10.png') no-repeat center top/98% 98%;"><img class="chimg" src="image/select_circle_clo.png" alt=""></div></label>
                 </div>
                 <div class="section-content">
                     <p>초록</p>
