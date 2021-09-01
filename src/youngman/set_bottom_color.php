@@ -3,9 +3,13 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
 ?>
 <style>
+    body {
+        margin: 0;
+        background-color: #1a306d;
+    }
     .layout {
         width: 100vw;
-        height: 205.5vw;
+        height: 100vh;
         text-align: center;
     }
 
@@ -63,9 +67,7 @@
         width: 100%;
         left: 0;
     }
-    .mb:hover {
-        top:-24.1vw;
-    }
+    
 
 
     .overlay {
@@ -77,6 +79,7 @@
     .section {
         height: 60.81%;
         text-align: center;
+        background-color: white;
     }
 
     /*radio*/
@@ -147,10 +150,10 @@
 
     .footer-content {
         position: relative;
-        top: 30%;
+        top: 50%;
         left: 50%;
-        width: 80%;
-        height: 43%;
+        width: 85%;
+        height: 60%;
         overflow: hidden;
         transform: translate(-50%, -50%);
     }
@@ -158,22 +161,23 @@
     .btn {
         float: left;
         display: inline-block;
-        width: 15%;
+        width: 16%;
         height: 100%;
     }
 
     .info_area {
         float: left;
         display: inline-block;
-        width: 70%;
+        width: 68%;
         height: 100%;
         background: url("/image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
     }
 
     .info_area div {
+        height: 100%;
         color: white;
         font-size: 3em;
-        margin-top: 6%;
+        line-height: 2.8em;
     }
 
     .btn_prev, .btn_next {
@@ -181,41 +185,39 @@
         width: 100%;
         height: 100%;
         vertical-align: top;
-        background: url("/image/btn_btm_lr.png") no-repeat top/cover;
     }
-
+    
+    
     .btn_prev {
-        background-position: 0 0%;
-        /*비활성화*/
-        /*background-position: 0 33.35%;*/
+        background: url("/image/bottom_button_prev.png") no-repeat top/cover;
     }
 
     .btn_next {
-/*        background-position: 0 67%;*/
-        background-position: 0 100%;
+        background: url("/image/bottom_button_next_off.png") no-repeat top/cover;
+        /*background: url("/image/next.png") no-repeat top/cover*/
     }
 
 </style>
 <script>
 $( document ).ready(function() {
 
-    $('input[type=radio][name=top_color]').change(function() {
-        $(".btn_next").css("background-position", "0 67%");
-        $("#prev_img").attr("src", "/image/parts/<?=substr($_SESSION["TOP_TYPE"],0,3)?>" + this.value + ".png");
+    $('input[type=radio][name=hair_color]').change(function() {
+        $(".btn_next").css("background: url('/image/bottom_button_next.png') no-repeat top/cover");
+        $("#prev_img").attr("src", "/image/parts/<?=$_SESSION["BOTTOM_TYPE"]?>" + this.value + ".png");
     });
 
     $(".btn_next").click(function(){
 
-        var top_color = $('input[name="top_color"]:checked').val();
+        var bottom_color = $('input[name="bottom_color"]:checked').val();
 
-        if( top_color === undefined ) {
-            alert("상의컬러를 선택해 주세요.");
+        if( bottom_color === undefined ) {
+            alert("하의컬러를 선택해 주세요.");
             return;
         } else {
 
             var json_data = {
-                                 top_color : top_color
-                                ,now_step  : 'set_top_color'
+                                 bottom_color : bottom_color
+                                ,now_step  : 'set_bottom_color'
                             };
             json_data = JSON.stringify(json_data);
 
@@ -246,33 +248,32 @@ $( document ).ready(function() {
 </script>
 <? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
 </head>
-
 <body>
     <div class="layout">
         <div class="overlay">
             <div class="top">
                 <div class="top-sbj">
                     <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
-                    <div class="top-sbj-sb2"><img src="/image/06_c2000_toptxt1.gif" alt=""></div>
+                    <div class="top-sbj-sb2"><img src="/image/08_c3000_toptxt1.gif" alt=""></div>
                     <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
                 </div>
             </div>
 
             <div class="section">
-               <div class="result-img">
+                <div class="result-img">
                     <div class="result-box">
                         <img src="/image/parts/avatar_result_body.png" alt="">
                         <img src="/image/parts/<?=$_SESSION["HAIR_TYPE"]?><?=$_SESSION["HAIR_COLOR"]?>.png" alt="">
-                        <img id="prev_img" class="t-shirt" src="/image/parts/<?=$_SESSION["TOP_TYPE"]?>0.png" alt="">
-                        <img class="pants" src="/image/parts/avatar_result_basic2.png" alt="">
+                        <img class="t-shirt" src="/image/parts/<?=$_SESSION["TOP_TYPE"]?><?=$_SESSION["TOP_COLOR"]?>.png" alt="">
+                        <img id="prev_img" class="pants" src="/image/parts/<?=$_SESSION["BOTTOM_TYPE"]?>0.png" alt="">
                    </div>
                </div>
                 <div class="section-content">
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="0" type="radio"><div style="background:url('/image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="1" type="radio"><div style="background:url('/image/color02.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="2" type="radio"><div style="background:url('/image/color03.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="3" type="radio"><div style="background:url('/image/color04.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="4" type="radio"><div style="background:url('/image/color05.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="0" type="radio"><div style="background:url('/image/color01.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="1" type="radio"><div style="background:url('/image/color02.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="2" type="radio"><div style="background:url('/image/color03.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="3" type="radio"><div style="background:url('/image/color04.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="4" type="radio"><div style="background:url('/image/color05.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
                 </div>
                 <div class="section-content">
                     <p>검정</p>
@@ -282,11 +283,11 @@ $( document ).ready(function() {
                     <p>노랑</p>
                 </div>
                 <div class="section-content">
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="5" type="radio"><div style="background:url('/image/color06.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="6" type="radio"><div style="background:url('/image/color07.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="7" type="radio"><div style="background:url('/image/color08.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="8" type="radio"><div style="background:url('/image/color09.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
-                    <label><input class="radio" name="top_color" id="top_color" class="change_color" value="9" type="radio"><div style="background:url('/image/color10.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="5" type="radio"><div style="background:url('/image/color06.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="6" type="radio"><div style="background:url('/image/color07.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="7" type="radio"><div style="background:url('/image/color08.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="8" type="radio"><div style="background:url('/image/color09.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
+                    <label><input class="radio" name="bottom_color" id="bottom_color" value="9" type="radio"><div style="background:url('/image/color10.png') no-repeat center top/98% 98%;"><img class="chimg" src="/image/select_circle_clo.png" alt=""></div></label>
                 </div>
                 <div class="section-content">
                     <p>초록</p>
@@ -300,13 +301,13 @@ $( document ).ready(function() {
             <div class="footer">
                 <div class="footer-content">
                     <div class="btn">
-                        <a id="prev" class="btn_prev" href="set_top_type" role="button"><span class="blind"></span></a>
+                        <a id="prev" class="btn_prev" href="set_bottom_type" role="button"><span class="blind"></span></a>
                     </div>
                     <div class="info_area">
-                        <div>상의 스타일 완성</div>
+                        <div>하의 스타일 완성</div>
                     </div>
                     <div class="btn">
-                        <span class="btn_next""><span class="blind"></span></span>
+                        <span class="btn_next"><span class="blind"></span></span>
                     </div>
                 </div>
             </div>
