@@ -3,6 +3,53 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
 ?>
 <style>
+    /* reset css */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,
+aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
+nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,
+nav,section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input:focus {
+  outline: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* css */
     body {
         font-family: 'Nanum Gothic', sans-serif;
         margin: 0;
@@ -10,7 +57,7 @@
 
     .layout {
         width: 100vw;
-        height: 205.5vw;
+        height: 100vh;
         text-align: center;
     }
 
@@ -51,6 +98,7 @@
 
     .top-sbj-sb img {
         height: 100%;
+        margin-top: 0.5%;
     }
 
     .section {
@@ -111,7 +159,7 @@
         display: inline-block;
         float: left;
         padding-top: 3%;
-        width: 28%;
+        width: 29%;
         height: 100%;
     }
 
@@ -143,6 +191,7 @@
         height: 43%;
         overflow: hidden;
         transform: translate(-50%, -50%);
+        background-color: red;
     }
 
     .btn {
@@ -157,7 +206,7 @@
         display: inline-block;
         width: 70%;
         height: 100%;
-        background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
+        background: url("image/s1000~5000_button.png") no-repeat center bottom/100%;
     }
 
     .info_area div {
@@ -184,9 +233,7 @@
 /*        background-position: 0 67%;*/
         background-position: 0 100%;
     }
-    [type=radio]:checked btn_next {
-        background-position: 0 67%
-    }
+
 
 </style>
 <? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
