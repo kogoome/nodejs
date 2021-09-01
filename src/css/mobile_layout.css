@@ -1,0 +1,20 @@
+@import "resetcss.css";
+.layout {
+  width: 100vw;
+  height: 100vw;
+}
+nav {
+  position: fixed;
+  width: 100vw;
+  height: 7vh;
+  background-color: rgb(141, 141, 218);
+}
+header {
+  height: 20vh;
+  width: 100vw;
+  background-color: rgb(186, 228, 214);
+}
+section {
+  height: 100vh;
+  background-color: black;
+}
