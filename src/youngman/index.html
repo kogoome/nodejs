@@ -18,26 +18,31 @@ mysqli_query($my_conn, $sql);
 <style>
     body{
         background-color: #45a5e8;
+        margin:0;
     }
     .layout {
         width: 100vw;
-        height: 205.5vw;
+        height: 100vh;
         text-align: center;
     }
 
     .top {
         height: 25.67%;
-        background: url('/image/topbg_1.png') no-repeat center bottom/100% 100%;
+        background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
     }
     .top-sbj {
-        padding-top: 18%;
+        position:relative;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .mt {
+      top: 10%;
         width: 85%;
     }
     .section {
         height: 60.81%;
-        background: url('/image/01_main_image.jpg')  no-repeat center bottom/100% 100%;
+        background: url('image/01_main_image.jpg')  no-repeat center bottom/100% 100%;
         text-align: center;
     }
     .section-content {
@@ -50,12 +55,13 @@ mysqli_query($my_conn, $sql);
         overflow: hidden;
         transform: translate(-50%, -50%);
     }
-    .mb {
+    .btn-main {
         position: absolute;
         height: 100%;
-        left:0;
+        width: 400%;
+        left:0px;
     }
-    .mb:hover {
+    .btn-main:hover {
         left:-105.85vw;
     } /*238기준*/
     .footer {
@@ -64,7 +70,10 @@ mysqli_query($my_conn, $sql);
         color: #626262;
     }
     .footer-logo {
-        padding-top: 9%;
+      position:relative;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .ml {
         width: 65%
@@ -81,17 +90,17 @@ mysqli_query($my_conn, $sql);
   <div class="overlay">
     <div class="top">
       <div class="top-sbj">
-        <img src="/image/01_main_title.png" class="mt" alt="main-title">
+        <img src="image/01_main_title.png" class="mt" alt="main-title">
       </div>
     </div>
     <div class="section">
       <div class="section-content">
-        <a href="/set_nick"><img src="/image/01_main_button.png" class="mb" alt="main-btn"></a>
+        <a href="/set_nick" ><img class="btn-main" src="image/01_main_button.png"></img></a>
       </div>
     </div>
     <div class="footer">
       <div class="footer-logo">
-        <img src="/image/01_main_logo.png" class="ml" alt="main-logo">
+        <img src="image/01_main_logo.png" class="ml" alt="main-logo">
       </div>
     </div>
   </div>

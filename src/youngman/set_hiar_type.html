@@ -10,13 +10,13 @@
 
     .layout {
         width: 100vw;
-        height: 205.5vw;
+        height: 100vh;
         text-align: center;
     }
 
     .top {
         height: 25.67%;
-        background: url('/image/topbg_1.png') no-repeat center bottom/100% 100%;
+        background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
         text-align: center;
         position: relative;
     }
@@ -37,6 +37,7 @@
         margin-bottom: 2.5%;
         font-size: 4.9em;
         color: white;
+        background-color: red;
         letter-spacing: -0.1em;
     }
 
@@ -185,6 +186,7 @@
         background-position: 0 100%;
     }
 
+
 </style>
 <? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
 <script>
@@ -192,7 +194,7 @@ $( document ).ready(function() {
 
     $('input[type=radio][name=hair_type]').change(function() {
         $(".btn_next").css("background-position", "0 67%");
-//        $("#prev_img").attr("src", "/image/parts/" + this.value + ".png");
+//        $("#prev_img").attr("src", "image/parts/" + this.value + ".png");
     });
 
 
@@ -244,18 +246,18 @@ $( document ).ready(function() {
         <div class="overlay">
             <div class="top">
                 <div class="top-sbj">
-                    <div class="top-sbj-sb"><img src="/image/topbg_txt_mark1.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
                     <div class="top-sbj-sb"><div id="user_id"><?=$_SESSION['USER_NM']?></div>님,</div>
                     <div class="top-sbj-sb">오늘의 헤어스타일은?</div>
-                    <div class="top-sbj-sb"><img src="/image/topbg_txt_mark2.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
                 </div>
             </div>
             <div class="section">
                 <div class="section-content">
                     <div class="flex-container">
-                        <label><input name="hair_type" id="hair_type" value="101" type="radio"><div style="background:url('/image/parts/s1010.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="102" type="radio"><div style="background:url('/image/parts/s1020.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="103" type="radio"><div style="background:url('/image/parts/s1030.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="101" type="radio"><div style="background:url('image/parts/s1010.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="102" type="radio"><div style="background:url('image/parts/s1020.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="103" type="radio"><div style="background:url('image/parts/s1030.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
                     </div>
                     <div class="flex-container-caption">
                         <div class="name">민머리</div>
@@ -263,9 +265,9 @@ $( document ).ready(function() {
                         <div class="name">숏컷</div>
                     </div>
                     <div class="flex-container">
-                        <label><input name="hair_type" id="hair_type" value="104" type="radio"><div style="background:url('/image/parts/s1040.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="105" type="radio"><div style="background:url('/image/parts/s1050.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="106" type="radio"><div style="background:url('/image/parts/s1060.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="104" type="radio"><div style="background:url('image/parts/s1040.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="105" type="radio"><div style="background:url('image/parts/s1050.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="106" type="radio"><div style="background:url('image/parts/s1060.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
                     </div>
                     <div class="flex-container-caption">
                         <div class="name">단발</div>
@@ -273,9 +275,9 @@ $( document ).ready(function() {
                         <div class="name">장발 웨이브</div>
                     </div>
                     <div class="flex-container">
-                        <label><input name="hair_type" id="hair_type" value="107" type="radio"><div style="background:url('/image/parts/s1070.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="108" type="radio"><div style="background:url('/image/parts/s1080.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
-                        <label><input name="hair_type" id="hair_type" value="109" type="radio"><div style="background:url('/image/parts/s1090.png') no-repeat center bottom/100% 100%;"><img src="/image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="107" type="radio"><div style="background:url('image/parts/s1070.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="108" type="radio"><div style="background:url('image/parts/s1080.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
+                        <label><input name="hair_type" id="hair_type" value="109" type="radio"><div style="background:url('image/parts/s1090.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div></label>
                     </div>
                     <div class="flex-container-caption">
                         <div class="name">똥머리</div>
@@ -293,7 +295,7 @@ $( document ).ready(function() {
                         <div>헤어스타일 완성</div>
                     </div>
                     <div class="btn">
-                        <span class="btn_next"><span class="blind"></span></span>
+                        <span id="btn-next" class="btn_next"><span class="blind"></span></span>
                     </div>
                 </div>
             </div>
