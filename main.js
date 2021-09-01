@@ -8,6 +8,6 @@ const server = http.createServer((req, res) => {
 
 const PORT = 4000
 server.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`The server is listening at port: ${PORT}.`)
 })
-

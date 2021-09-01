@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"helllo world",
+    "test": "echo 'hello world'",
     "debug": "node src/**.*",
-    "build": "esbuild src/ch4. 모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
-    "server": "nodemon src/ch5. RESTful API 서버/blogServer.js"
+    "build": "esbuild src/ch4.모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
+    "server": "nodemon src/ch9.Express/ExpressModule.js"
   },
   "engines": {
     "node": "14.17.2"
@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^16.7.1",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -29,6 +30,7 @@
   "dependencies": {
     "core-js": "^3.16.4",
     "esbuild": "^0.12.24",
+    "express": "^4.17.1",
     "node-sass": "^6.0.1"
   }
 }
