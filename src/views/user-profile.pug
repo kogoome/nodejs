@@ -9,6 +9,7 @@ html
         span.green.big= nickname
 
         h2 Profile
+        img(src=profileImageURL).profileImage
         form(action=`/users/${userId}/profile` method="post" enctype="multipart/form-data")
             input(type="file" name="profile")
             button Upload Profile Picture
