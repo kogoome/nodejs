@@ -1,0 +1,309 @@
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/db_conn.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/inc/header.php');
+?>
+<style>
+    body {
+        font-family: 'Nanum Gothic', sans-serif;
+        margin: 0;
+    }
+
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .top {
+        height: 25.67%;
+        background: url('image/topbg_1.png') no-repeat center bottom/100% 100%;
+        text-align: center;
+        position: relative;
+    }
+
+    .top-sbj {
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        width: 80%;
+        height: 70%;
+        transform: translate(-50%, -50%);
+    }
+
+    .top-sbj-sb {
+        width: 100%;
+        height: 19%;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+        font-size: 4.9em;
+        color: white;
+        letter-spacing: -0.1em;
+    }
+
+    .top-sbj-sb div {
+        display: inline-block;
+        line-height: 80%;
+        color: white;
+        font-weight: bolder;
+        font-size: 1em;
+        margin-right: 1.3%;
+    }
+
+    .top-sbj-sb img {
+        height: 100%;
+        margin-top: 3%;
+    }
+
+    .section {
+        height: 60.81%;
+        background-color: white;
+        text-align: center;
+    }
+
+    .section-content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 77%;
+        border-radius: 6px;
+        transform: translate(-50%, -50%);
+    }
+
+    .flex-container {
+        display: flex;
+        height: 23.33%;
+        justify-content: space-between;
+    }
+
+    .flex-container>label {
+        width: 29%;
+        height: 100%;
+    }
+
+    label div {
+        width: 100%;
+        height: 100%;
+    }
+
+    label>div>img {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    [type=radio] {
+        display: none;
+    }
+
+    [type=radio]:checked+div>img {
+        opacity: 1;
+    }
+
+    .flex-container-caption {
+        display: flex;
+        text-align: center;
+        font-size: 1.5em;
+        height: 10%;
+        justify-content: space-between;
+    }
+
+    .name {
+        display: inline-block;
+        float: left;
+        padding-top: 3%;
+        width: 28%;
+        height: 100%;
+    }
+    /*footer*/
+    .footer {
+        height: 13.52%;
+        background-color: white;
+    }
+
+    .footer-content {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 7vh;
+        overflow: hidden;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn {
+        float: left;
+        display: inline-block;
+        width: 15vw;
+        height: 7vh;
+    }
+
+    .info_area {
+        float: left;
+        display: inline-block;
+        width: 62%;
+        height: 100%;
+        background: url("image/s1000~5000_button.png") no-repeat center bottom/100% 100%;
+    }
+
+    .info_area div {
+        height: 100%;
+        color: white;
+        font-size: 3em;
+        line-height: 3.2em;
+    }
+
+    .btn_prev,
+    .btn_next {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+
+
+    .btn_prev {
+        background: url("image/bottom_button_prev.png") no-repeat center bottom/100% 100%;
+    }
+
+    .btn_next {
+        background: url("image/bottom_button_next_off.png") no-repeat center bottom/100% 100%;
+        /*background: url("image/next.png") no-repeat top/cover*/
+    }
+
+</style>
+<? include_once($_SERVER['DOCUMENT_ROOT'].'/inc/check_session.php'); ?>
+<script>
+    $(document).ready(function() {
+
+        $('input[type=radio][name=hair_type]').change(function() {
+            $(".btn_next").css("background-position", "0 67%");
+            //        $("#prev_img").attr("src", "image/parts/" + this.value + ".png");
+        });
+
+
+        $(".btn_next").click(function() {
+
+            var hair_type = $('input[name="hair_type"]:checked').val();
+
+            if (hair_type === undefined) {
+                alert("헤어스타일을 선택해 주세요.");
+                return;
+            } else {
+
+                var json_data = {
+                    hair_type: hair_type,
+                    now_step: 'set_hair_type'
+                };
+                json_data = JSON.stringify(json_data);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/process/process.php",
+                    cache: false,
+                    dataType: "text",
+                    data: json_data,
+                    success: function(result) {
+                        console.log(JSON.stringify(result));
+                        data = JSON.parse(result);
+
+                        if (data.message == "success") {
+                            location.href = data.url;
+                        } else {
+
+                        }
+                    },
+                    error: function(err) {
+                        alert(err.responseText);
+                    }
+                }); // end ajax
+            } // end if
+        });
+
+    });
+
+</script>
+
+</head>
+
+<body>
+    <div class="layout">
+        <div class="overlay">
+            <div class="top">
+                <div class="top-sbj">
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark1.png" alt="txt-mark"></div>
+                    <div class="top-sbj-sb">
+                        <div id="user_id"><?=$_SESSION['USER_NM']?></div>님,
+                    </div>
+                    <div class="top-sbj-sb">오늘의 헤어스타일은?</div>
+                    <div class="top-sbj-sb"><img src="image/topbg_txt_mark2.png" alt="txt-mark"></div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-content">
+                    <div class="flex-container">
+                        <label><input name="hair_type" id="hair_type" value="101" type="radio">
+                            <div style="background:url('image/parts/s1010.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="102" type="radio">
+                            <div style="background:url('image/parts/s1020.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="103" type="radio">
+                            <div style="background:url('image/parts/s1030.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                    </div>
+                    <div class="flex-container-caption">
+                        <div class="name">민머리</div>
+                        <div class="name">스포츠머리</div>
+                        <div class="name">숏컷</div>
+                    </div>
+                    <div class="flex-container">
+                        <label><input name="hair_type" id="hair_type" value="104" type="radio">
+                            <div style="background:url('image/parts/s1040.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="105" type="radio">
+                            <div style="background:url('image/parts/s1050.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="106" type="radio">
+                            <div style="background:url('image/parts/s1060.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                    </div>
+                    <div class="flex-container-caption">
+                        <div class="name">단발</div>
+                        <div class="name">장발 생머리</div>
+                        <div class="name">장발 웨이브</div>
+                    </div>
+                    <div class="flex-container">
+                        <label><input name="hair_type" id="hair_type" value="107" type="radio">
+                            <div style="background:url('image/parts/s1070.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="108" type="radio">
+                            <div style="background:url('image/parts/s1080.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                        <label><input name="hair_type" id="hair_type" value="109" type="radio">
+                            <div style="background:url('image/parts/s1090.png') no-repeat center bottom/100% 100%;"><img src="image/select_circle_cha.png" alt=""></div>
+                        </label>
+                    </div>
+                    <div class="flex-container-caption">
+                        <div class="name">똥머리</div>
+                        <div class="name">최준머리</div>
+                        <div class="name">불꽃머리</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="btn">
+                        <a id="prev" class="btn_prev" href="/set_nick" role="button"><span class="blind"></span></a>
+                    </div>
+                    <div class="info_area">
+                        <div>헤어스타일 완성</div>
+                    </div>
+                    <div class="btn">
+                        <span class="btn_next"><span class="blind"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
