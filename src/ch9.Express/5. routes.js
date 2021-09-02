@@ -3,17 +3,14 @@
 /* eslint-disable no-console */
 
 const express = require('express')
+// const bodyParser = require('body-parser')
 
 const userRouter = express.Router()
 
-const app = express() // 익스프레스 앱 객체
-app.use(express.json)
+const app = express()
+app.use(express.json())
 
 const PORT = 5000
-
-userRouter.get('/', (req, res) => {
-  res.send(`User list`)
-})
 
 const USERS = {
   jack: {
@@ -21,16 +18,16 @@ const USERS = {
   },
 }
 
+userRouter.get('/', (req, res) => {
+  res.send(`User list`)
+})
+
 userRouter.param('id', (req, res, next, value) => {
   // 2. 검출된 아이디정보로부터
   console.log(`id param :`, value) // 3. 절차를 수행하고
   // @ts-ignore
   req.user = USERS[value]
   next() // 4. 다음프로세스로 아이디정보를 넘김
-})
-
-userRouter.get('/', (req, res) => {
-  res.send('print user-list')
 })
 
 userRouter.get('/:id', (req, res) => {
@@ -46,7 +43,6 @@ userRouter.post('/', (req, res) => {
 })
 
 userRouter.post(`/:id/nickname`, (req, res) => {
-  // res.body:{'nickname':}
   // @ts-ignore
   const { user } = req
   const { nickname } = req.body
