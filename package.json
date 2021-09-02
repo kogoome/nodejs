@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'hello world'",
+    "test": "jest",
     "debug": "node src/**.*",
     "build": "esbuild src/ch4.모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
     "server": "nodemon src/ch9.Express/Express.js"
@@ -17,14 +17,18 @@
   "description": "",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.7.1",
+    "@types/supertest": "^2.0.11",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-node": "^11.1.0",
+    "jest": "^27.1.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
+    "supertest": "^6.1.6",
     "typescript": "^4.3.5"
   },
   "dependencies": {
@@ -32,6 +36,7 @@
     "core-js": "^3.16.4",
     "esbuild": "^0.12.24",
     "express": "^4.17.1",
+    "multer": "^1.4.3",
     "node-sass": "^6.0.1",
     "pug": "^3.0.2"
   }

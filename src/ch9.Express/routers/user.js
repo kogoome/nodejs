@@ -1,18 +1,24 @@
 // @ts-check
 
 const express = require('express')
+const multer = require('multer')
+
+const upload = multer({ dest: 'uploads/' })
 
 const router = express.Router()
 
 const USERS = {
   jack: {
     nickname: 'johnson',
+    profileImage: undefined,
   },
   11: {
     nickname: 'foo',
+    profileImage: undefined,
   },
   12: {
     nickname: 'bar',
+    profileImage: undefined,
   },
 }
 
@@ -51,6 +57,7 @@ router.get('/:id', (req, res) => {
     res.render('user-profile', {
       // @ts-ignore
       nickname: req.user.nickname,
+      userId: req.params.id,
     })
   }
 })
@@ -68,6 +75,12 @@ router.post(`/:id/nickname`, (req, res) => {
   user.nickname = nickname
 
   res.send(`User nickname updated : ${nickname}`)
+})
+
+router.post('/:id/profile', upload.single('profile'), (req, res) => {
+  console.log(req.file)
+
+  res.send('User profile image uploaded')
 })
 
 module.exports = router
