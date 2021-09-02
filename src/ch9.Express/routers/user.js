@@ -87,7 +87,7 @@ router.post('/:id/profile', upload.single('profile'), (req, res) => {
   // @ts-ignore
   const { user } = req
   const { filename } = req.file
-  user.profileImagekey = filename
+  user.profileImagkey = filename
 
   res.send(`User profile image uploaded : ${filename}`)
 })
