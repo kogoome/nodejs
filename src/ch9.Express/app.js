@@ -15,6 +15,7 @@ app.use('/users', userRouter)
 app.use('/public', express.static('src/public')) // css 반영.
 app.use('/uploads', express.static('uploads'))
 
+// @ts-ignore
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   // 에러 핸들링 (스택트레이스처리)

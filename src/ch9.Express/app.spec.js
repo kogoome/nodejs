@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line node/no-unpublished-require
 const supertest = require('supertest')
-const app = require('./9. app')
+const app = require('./app')
 
 const request = supertest(app)
 

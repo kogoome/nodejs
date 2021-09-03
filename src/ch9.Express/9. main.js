@@ -1,6 +1,6 @@
 // @ts-check
 
-const app = require('./9. app')
+const app = require('./app')
 
 const PORT = 5000
 

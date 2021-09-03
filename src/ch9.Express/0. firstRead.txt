@@ -2,6 +2,7 @@
 package.json 노드몬 서버 실행경로 추가 후
 순서별 파일들을 Express.js에 복사해서 실행
 
+패키지 제이슨 파일을 보면 npm run server로 Express.js가 구동되게 되있음
 "scripts": {
   "server": "nodemon src/ch9.Express/Express.js"
 },
