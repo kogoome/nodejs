@@ -1,11 +1,12 @@
 // @ts-check
 
 const { MongoClient } = require('mongodb')
-const { mainModule } = require('process')
+// const { mainModule } = require('process')
 
 const uri =
   'mongodb+srv://kogoome:1231@cluster0.pjzwy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {
+  // @ts-ignore
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -66,10 +67,9 @@ async function main() {
         ],
       },
     },
-    {
-      $count: '검색된 정보 수',
-    },
+    // { $count: '검색된 정보 수', },
   ])
+  // eslint-disable-next-line no-console
   await cursor.forEach(console.log) // 커서에 잇는 문서 각각 콘솔출력
   await client.close()
 }

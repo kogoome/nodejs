@@ -6,7 +6,8 @@
     "test": "jest",
     "debug": "node src/**.*",
     "build": "esbuild src/ch4.모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
-    "server": "nodemon src/ch9.Express/Express.js"
+    "server": "nodemon src/ch9.Express/Express.js",
+    "koa": "nodemon src/ch11.실시간채팅/koa.js"
   },
   "engines": {
     "node": "14.17.2"
@@ -37,9 +38,16 @@
     "core-js": "^3.16.4",
     "esbuild": "^0.12.24",
     "express": "^4.17.1",
+    "koa": "^2.13.1",
+    "koa-mount": "^4.0.0",
+    "koa-pug": "^5.0.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0",
+    "koa-websocket": "^6.0.0",
     "mongodb": "^4.1.1",
     "multer": "^1.4.3",
     "node-sass": "^6.0.1",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "tailwindcss": "^2.2.9"
   }
 }

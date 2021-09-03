@@ -23,10 +23,7 @@
   },
   "[html]": {
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ],
-
-
-  }
+    "gitlens.codeLens.scopes": ["document"]
+  },
+  "tailwindCSS.emmetCompletions": true
 }
