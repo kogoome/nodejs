@@ -17,16 +17,16 @@
   const animals = ['알파카', '물범', '코끼리', '사자', '돌고래', '오소리']
 
   /**
-   * @param {string[]} array 
+   * @param {string[]} array
    * @returns {string}
    */
-  const pickRandom = (array)=>{
-    const randomIdx = Math.floor(Math.random()*array.length)
+  const pickRandom = (array) => {
+    const randomIdx = Math.floor(Math.random() * array.length)
     const result = array[randomIdx]
-    if(!result) throw new Error('배열이 비어있어요')
+    if (!result) throw new Error('배열이 비어있어요')
     return result
   }
-  
+
   const randomId = `${pickRandom(adjective)} ${pickRandom(animals)}`
 
   formEl.addEventListener('submit', (event) => {
@@ -50,14 +50,26 @@
    */
   const chats = []
 
-  socket.addEventListener('message', (event) => {
-    console.log('aaa')
+  const drawChats = () => {
     chatsEL.innerHTML = ''
-    chats.push(JSON.parse(event.data))
     chats.forEach(({ userId, message }) => {
       const div = document.createElement('div')
       div.innerText = `${userId}: ${message}`
       chatsEL.appendChild(div)
     })
+  }
+
+  socket.addEventListener('message', (event) => {
+    const { type, payload } = JSON.parse(event.data)
+    if (type === 'sync') {
+      const { chats: syncedChats } = payload
+      chats.push(...syncedChats)
+    } else if (type === 'chat') {
+      const chat = payload
+      chats.push(chat)
+    }
+
+    drawChats()
+    chats.push()
   })
 })()
