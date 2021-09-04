@@ -1,6 +1,6 @@
 // @ts-check
 
-// 퍼그연결
+// 웹소켓 스태틱 마운트 연결
 
 const Koa = require('koa')
 const Pug = require('koa-pug')
@@ -29,14 +29,32 @@ app.use(async (ctx) => {
 // Using routes
 app.ws.use(
   // 웹소캣 미들웨어는 .ws로 구현
-  route.all('/test/:id', (ctx) => {
+  route.all('/ws', (ctx) => {
     // 해당 주소로 들어오면 처리
     // `ctx` is the regular koa context created from the `ws` onConnection `socket.upgradeReq` object.
     // the websocket is added to the context on `ctx.websocket`.
-    ctx.websocket.send('Hello World')
-    ctx.websocket.on('message', (message) => {
+    // ctx.websocket.send('Hello World')
+    ctx.websocket.on('message', (data) => {
       // do something with the message from client
-      console.log(message)
+      if (typeof data !== 'string') {
+        return
+      } // 데이터가 스트링일때만 수행하게끔 스트링이 아닐때 멈추도록
+      const { userId, message } = JSON.parse(data)
+
+      const { server } = app.ws
+
+      if (!server) {
+        return
+      }
+
+      server.clients.forEach((client) => {
+        client.send(
+          JSON.stringify({
+            userId,
+            message,
+          })
+        )
+      })
     })
   })
 )
