@@ -1,8 +1,11 @@
-
 import http from 'http'
 import { createApi } from 'unsplash-js'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
+// const http = require('http')
+// const { createApi } = require('unsplash-js')
+// const fetch = require('node-fetch')
+// const dotenv = require('dotenv')
 
 global.fetch = fetch
 dotenv.config()
@@ -13,7 +16,7 @@ const unsplash = createApi({
 })
 
 /**
- * @param {string} query  
+ * @param {string} query
  */
 async function searchImg(query) {
   const result = await unsplash.search.getPhotos({ query })
@@ -33,20 +36,18 @@ async function searchImg(query) {
   }
 }
 
-const server = http.createServer((req,res)=>{
+const server = http.createServer((req, res) => {
   async function main() {
     const result = await searchImg('mountain')
     const resp = await fetch(result.url)
     resp.body.pipe(res) // 페치에서 스트림제공
   }
-  
+
   main()
 })
 
 const PORT = 5000
 
-server.listen(PORT,()=>{
+server.listen(PORT, () => {
   console.log(`localhost:${PORT}`)
 })
-
-

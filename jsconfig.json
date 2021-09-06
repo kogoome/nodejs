@@ -7,6 +7,6 @@
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src/**/*.js"],
+  "include": ["src/**/*.js", "src/ch11.실시간채팅/koa.js"], "src/ch12.이미지리사이징/unsplash.mjs",
   "exclude": ["node_modules"]
 }
