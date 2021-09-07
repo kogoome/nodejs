@@ -1,4 +1,7 @@
 // @ts-check
+
+// 디비 연결 모듈
+
 const { MongoClient } = require('mongodb')
 require('dotenv').config()
 
