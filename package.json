@@ -6,11 +6,13 @@
     "test": "jest",
     "debug": "node src/**.*",
     "build": "esbuild src/ch4.모던자바스크립트/buildex.js --bundle --outfile=build/buildex.js --target=node12.22",
-    "server": "nodemon src/ch9.Express/Express.js",
-    "koa": "nodemon src/ch11.실시간채팅/koa.js"
+    "express": "nodemon src/ch9.Express/Express.js",
+    "mongo": "nodemon src/ch10.몽고디비/mongo.js",
+    "koa": "nodemon src/ch11.실시간채팅/koa.js",
+    "unsplash": "nodemon src/ch12.이미지리사이징/unsplash.mjs"
   },
   "engines": {
-    "node": "14.17.2"
+    "node": "16.8.0"
   },
   "keywords": [],
   "author": "",
@@ -19,24 +21,25 @@
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.1",
+    "@types/node": "^16.7.10",
     "@types/supertest": "^2.0.11",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "jest": "^27.1.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "supertest": "^6.1.6",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "core-js": "^3.16.4",
-    "esbuild": "^0.12.24",
+    "core-js": "^3.17.2",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.12.25",
     "express": "^4.17.1",
     "koa": "^2.13.1",
     "koa-mount": "^4.0.0",
@@ -46,8 +49,10 @@
     "koa-websocket": "^6.0.0",
     "mongodb": "^4.1.1",
     "multer": "^1.4.3",
+    "node-fetch": "^3.0.0",
     "node-sass": "^6.0.1",
     "pug": "^3.0.2",
-    "tailwindcss": "^2.2.9"
+    "tailwindcss": "^2.2.9",
+    "unsplash-js": "^7.0.15"
   }
 }
