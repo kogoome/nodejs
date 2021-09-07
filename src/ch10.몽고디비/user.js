@@ -1,5 +1,5 @@
 // @ts-check
-
+const { users, article } = require('./mongoose')
 const client = require('./mongo')
 
 async function main() {
@@ -7,12 +7,12 @@ async function main() {
   await client.connect()
 
   // 컬렉션 연결
-  const users = client.db('weeksom').collection('users')
-  const article = client.db('weeksom').collection('article')
+  const users_db = client.db('weeksom').collection('users')
+  const article_db = client.db('weeksom').collection('article')
 
   // Reset
-  await users.deleteMany({})
-  await article.deleteMany({})
+  // await users.deleteMany({})
+  // await article.deleteMany({})
 
   // init
   await users.insertMany([
@@ -20,33 +20,24 @@ async function main() {
       email: 'test1@kakao.com',
       password: 'test1234#',
       nickname: '사자',
-      follow: [],
-      follower: [],
-      like: [],
     },
     {
       email: 'test2@kakao.com',
       password: 'test1234#',
       nickname: '알파카',
-      follow: [],
-      follower: [],
-      like: [],
     },
     {
       email: 'test3@kakao.com',
       password: 'test1234#',
       nickname: '물범',
-      follow: [],
-      follower: [],
-      like: [],
     },
   ])
 
   // 팔로우 업데이트
-  await users.updateOne(
-    { email: 'test1@kakao.com' },
-    { $set: { follow: ['test2@kakao.com'] } }
-  )
+  // await users.updateOne(
+  //   { email: 'test1@kakao.com' },
+  //   { $set: { follow: ['test2@kakao.com'] } }
+  // )
   // await users.updateOne(
   //   { email: 'test2@kakao.com' },
   //   { $set: { follower: ['test1@kakao.com'] } },
