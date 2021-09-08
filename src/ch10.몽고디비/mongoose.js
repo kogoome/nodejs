@@ -1,46 +1,35 @@
+// @ts-check
+
+// 몽구스 사용 디비연결
+
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-const Schema = mongoose.Schema()
+const uri = `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PW}@cluster0.pjzwy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 
-const users = new Schema({
-  id: { type: Schema.Types.ObjectId },
-  email: { type: String, required: true, unique: true, lowercase: true },
-  password: {
-    type: String,
-    required: true,
-    trim: true,
-    minlength: 8,
-    maxlength: 20,
+mongoose.connect(
+  uri,
+  {
+    dbName: 'weeksom',
+    // @ts-ignore
+    useNewUrlParser: true,
+    useCreateIndex: true,
   },
-  nickname: { type: String, require: true },
-  profileImgKey: { type: String },
-  userinfo: { type: String },
-  count: {
-    following_count: { type: Number },
-    follower_count: { type: Number },
-    board_count: { type: Number },
-    newMsg_count: { type: Number },
-  },
-  created_at: { type: Date },
-  updated_at: { type: Date },
-  article_private: { type: Boolean },
-})
+  (error) => {
+    if (error) {
+      console.log('몽고디비 연결 에러', error)
+    } else {
+      console.log('몽고디비 연결 성공')
+    }
+  }
+)
 
-const article = new mongoose.Schema({
-  id: Schema.Types.ObjectId,
-  writer_id: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-  content: {
-    images: [
-      {
-        img_id: { type: Number },
-        img_name: { type: String },
-      },
-    ],
-    title: { type: String },
-    text: { type: String },
-  },
-  tag: [{ type: String }],
-  created_at: { type: Date },
-})
+module.exports = mongoose
+// mongoose.connection.on('error', (error) => {
+//   console.error('몽고디비 연결 에러', error)
+// })
 
-module.exports = { users, article }
+// mongoose.connection.on('disconnected', () => {
+//   console.error('몽고디비 연결이 끊겼습니다. 연결을 재시도합니다.')
+//   connect()
+// })

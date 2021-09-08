@@ -1,5 +1,4 @@
-
-const client = require('./mongo')
+const client = require('./0.mongo')
 
 async function main() {
   await client.connect() // 디비 연결
@@ -49,14 +48,14 @@ async function main() {
         as: 'city_info', // 시티인포라 하고 임배드
       },
     },
-    {
-      $match: {
-        $or: [
-          { 'city_info.population': { $gte: 499 } },
-          { birth: { $lte: 1992 } },
-        ],
-      },
-    },
+    // {
+    //   $match: {
+    //     $or: [
+    //       { 'city_info.population': { $gte: 499 } },
+    //       { birth: { $lte: 1992 } },
+    //     ],
+    //   },
+    // },
     // { $count: '검색된 정보 수', },
   ])
   // eslint-disable-next-line no-console
